@@ -10,7 +10,9 @@ import { motion } from "framer";
 type Props = {};
 
 const Skills = (props: Props) => {
-  const { isSkillsOpen } = useSelector((state) => state.skills);
+  const { isSkillsOpen } = useSelector(
+    (state: { skills: { isSkillsOpen: boolean } }) => state.skills
+  );
   const dispatch = useDispatch();
 
   const SkillSectionTitle = (props: { title: string }) => {

@@ -8,7 +8,9 @@ import { closeMenu, openMenu } from "../../../redux/menu";
 type Props = {};
 
 const Header = (props: Props) => {
-  const { isMenuOpen } = useSelector((state) => state.menu);
+  const { isMenuOpen } = useSelector(
+    (state: { menu: { isMenuOpen: boolean } }) => state.menu
+  );
   const dispatch = useDispatch();
   const toggleMenu = () => {
     if (isMenuOpen) {
