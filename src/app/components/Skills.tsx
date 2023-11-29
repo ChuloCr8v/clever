@@ -61,7 +61,7 @@ const Skills = (props: Props) => {
         <motion.section
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          className="h-screen w-full py-12 pt-2 px-4 fixed z-50 left-0 top-0 bg-gray-100"
+          className="h-screen w-full py-12 pb-32 pt-2 px-4 fixed z-50 left-0 top-0 bg-gray-100"
         >
           <motion.div className="flex items-center justify-end relative">
             <div
