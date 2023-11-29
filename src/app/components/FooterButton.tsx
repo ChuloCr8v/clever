@@ -11,8 +11,8 @@ type Props = {
 
 const FooterButton = (props: Props) => {
   return (
-    <div className="fixed bottom-10 w-full px-4">
-      <div className="container flex justify-between items-center bg-gray-700 text-white px-2 py-3 shadow border border-opacity-50 rounded-md">
+    <div className="fixed bottom-4 w-full px-4">
+      <div className="container flex justify-between items-center bg-gray-500 text-white px-2 py-3 shadow border border-opacity-50 rounded-md">
         <Button
           title={props.prevTitle}
           link={props.prevLink}
