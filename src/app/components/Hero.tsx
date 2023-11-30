@@ -15,7 +15,7 @@ const Hero = (props: Props) => {
     <div className="flex flex-col justify-center items-center min-h-screen">
       <div className="container text-center flex flex-col items-center">
         <p className="text-base stroke">
-          Hey, <span className="">I&rsquom</span>
+          Hey, <span className="">I&rsquo;m</span>
         </p>
         <p className="text-2xl mt-1 uppercase font-bold">Nkematu Bonaventure</p>
         <p className="text-base mt-1 leading-none">
@@ -35,7 +35,7 @@ const Hero = (props: Props) => {
           onclick={() => dispatch(openSkills())}
           title={"More"}
           className={
-            " font-normal bg-gray-200 text-gray-700 hover:text-gray-200 hover:bg-gray-700 px-4 w-fit place-self-center mt-4"
+            " bg-gray-200 text-gray-700 font-semibold hover:text-gray-200 hover:bg-gray-700 px-4 w-fit place-self-center mt-4"
           }
         />
         <FooterButton

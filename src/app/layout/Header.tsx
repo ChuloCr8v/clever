@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../../../redux/menu";
+import Link from "next/link";
 
 type Props = {};
 
@@ -24,8 +25,10 @@ const Header = (props: Props) => {
   return (
     <header className="fixed left-0 top-0 z-50 w-full">
       <div className="container relative flex w-full justify-between px-4 py-2">
-        <div className="logo absolute left-4 z-50">Logo</div>
-        <button onClick={toggleMenu} className="absolute right-4 z-30">
+        <Link href="/" className="logo relative z-50">
+          Logo
+        </Link>
+        <button onClick={toggleMenu} className="relative z-30">
           Menu
         </button>
       </div>

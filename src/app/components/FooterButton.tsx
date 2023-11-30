@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Button from "./Button";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   prevTitle: string;
@@ -10,19 +11,43 @@ type Props = {
 };
 
 const FooterButton = (props: Props) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const currentScrollPos = window.scrollY;
+
+    setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  }, [prevScrollPos]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <div className="fixed bottom-4 w-full px-4">
-      <div className="container flex justify-between items-center bg-gray-500 text-white px-2 py-3 shadow border border-opacity-50 rounded-md">
+    <div
+      className={twMerge(
+        "fixed bottom-4 w-full px-4 translate-y-0 duration-300",
+        !isVisible && "translate-y-[100vh]"
+      )}
+    >
+      <div className="container flex justify-between items-center bg-gray-700 text-white shadow border border-opacity-50 rounded-md">
         <Button
           title={props.prevTitle}
           link={props.prevLink}
           icon={props.icon}
           prevBtn
+          className="px-4 py-2  hover:bg-black text-sm"
         />
         <Button
           title={props.nextTitle}
           link={props.nextLink}
           icon={props.icon}
+          className="px-4 py-2  hover:bg-black text-sm"
         />
       </div>
     </div>

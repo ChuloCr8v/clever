@@ -16,7 +16,13 @@ const Button = (props: Props) => {
   return (
     <div>
       {props.link ? (
-        <Link href={props.link} className="flex items-center gap-2">
+        <Link
+          href={props.link}
+          className={twMerge(
+            "flex items-center gap-2 py-2 px-3 hover:border-gray-700 border-transparent border rounded leading-none",
+            props.className
+          )}
+        >
           <span className={twMerge(props.prevBtn && "order-2")}>
             {props.title}
           </span>
@@ -32,7 +38,7 @@ const Button = (props: Props) => {
         <button
           onClick={props.onclick}
           className={twMerge(
-            "bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-1 rounded text-sm flex items-center justify-center gap-2",
+            "bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2",
             props.className
           )}
         >

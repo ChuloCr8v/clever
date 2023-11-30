@@ -14,7 +14,7 @@ const Page = (props: Props) => {
   const dispatch = useDispatch();
   return (
     <AnimatePresence>
-      <div className="overflow-x-hidden py-24 px-4">
+      <div className="overflow-x-hidden pt-24 pb-10 px-6">
         <motion.div
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -31,23 +31,23 @@ const Page = (props: Props) => {
               className=""
             />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
             <h2 className="w-full flex gap-3 basis-full text-4xl font-semibold leading-none">
               About <span className="border-b-2 border-black basis-full"></span>
             </h2>
-            <p className="text-justify">
+            <p className="text-jstify text-base">
               Hello. I am Nkematu Bonaventure, a frontend developer with vast
               experience creating amazing user interfaces and user experience.
-              <span className="mt-2 block">
+              <span className="mt-4 block">
                 {" "}
                 My work stacks include{" "}
-                <span className="font-semibold text-base">
+                <span className="font-semibold lowercase">
                   {" "}
                   HTML5, CSS3, JavaScript, React.js, Next.js, WordPress, Sass,
                   Bootstrap, TailwindCss,
                 </span>{" "}
                 <span
-                  className="bg-gray-200 px-3 inline-block rounded font-semibold hover:bg-gray-400 hover:text-white duration-200"
+                  className="bg-yellow-200 inline-block rounded font-semibold hover:bg-yellow-400 hover:text-white duration-200 leading-none"
                   onClick={() => dispatch(openSkills())}
                 >
                   etc{" "}
@@ -55,7 +55,7 @@ const Page = (props: Props) => {
                 . I create websites that are responsive across devices.
               </span>
             </p>
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4 mt-2">
               {" "}
               <Button
                 title={"Skills/Tools"}
