@@ -44,7 +44,31 @@ const page = (props: Props) => {
   const [currentProjectImage, setCurrentProjectImage] = useState(
     "/projects/lachiommy.png"
   );
-  const [projectData, setProjectData] = useState<any>({});
+  const [projectData, setProjectData] = useState<dataProps>({
+    img: "",
+    imageTwo: {
+      title: "",
+      images: [{ src: "" }],
+    },
+    imageOne: {
+      title: "",
+      images: [{ src: "" }],
+    },
+    imageThree: {
+      title: "",
+      images: [{ src: "" }],
+    },
+    imageFour: {
+      title: "",
+      images: [{ src: "" }],
+    },
+    description: "",
+    category: "",
+    tools: "",
+    year: "",
+    url: "",
+    title: "",
+  });
   const { isProjectDetailsOpen } = useSelector(
     (state: { projectDetails: { isProjectDetailsOpen: boolean } }) =>
       state.projectDetails
