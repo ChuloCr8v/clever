@@ -21,7 +21,7 @@ const ThemeSwitch: React.FC = () => {
   return (
     <div
       className={twMerge(
-        "relative bg-gray-200 flex flex-col items-center justify-center w-12 h-fit p-1 py-0.5 rounded-full overflow-hidden cursor-pointer "
+        "relative bg-gray-200 flex flex-col items-center justify-center w-12 h-fit p-1 py-0.5 rounded-full overflow-hidden cursor-pointer mt-0.5"
       )}
       onClick={toggleTheme}
     >
