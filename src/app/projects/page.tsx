@@ -40,7 +40,7 @@ type dataProps = {
   title: string;
 };
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const [currentProjectImage, setCurrentProjectImage] = useState(
     "/projects/lachiommy.png"
   );
@@ -113,4 +113,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;
