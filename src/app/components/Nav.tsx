@@ -4,10 +4,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaBriefcase, FaHeadphonesAlt, FaHome, FaUser } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
+import { closeMenu } from "../../../redux/menu";
+import { useDispatch } from "react-redux";
 
 type Props = { isOpen: boolean };
 
 const Nav = (props: Props) => {
+  const dispatch = useDispatch();
+
   const menu = [
     { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
     { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
@@ -39,6 +43,7 @@ const Nav = (props: Props) => {
                 key={index}
                 href={m.url}
                 className="text-5xl font-bold text-left overflow-hidden"
+                onClick={() => dispatch(closeMenu())}
               >
                 <motion.p
                   initial={{ y: -300 }}

@@ -20,6 +20,10 @@ body {
   color: rgb(var(--foreground-rgb));
 } */
 
+body {
+  transition: 0.3s;
+}
+
 * {
   margin: 0;
   padding: 0;

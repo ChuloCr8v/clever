@@ -45,7 +45,7 @@ const Skills = (props: Props) => {
             .map((s, index) => (
               <p
                 key={index}
-                className="text-sm bg-gray-100 text-center px-4 py-[1px] rounded-full"
+                className="text-sm bg-gray-100 text-center px-4 py-[1px] rounded-full dark:text-gray-700"
               >
                 {s.skill}
               </p>

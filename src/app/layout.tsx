@@ -7,6 +7,8 @@ import Skills from "./components/Skills";
 import { PersistGate } from "redux-persist/integration/react";
 import { Providers } from "../../redux/Providers";
 import { persistor } from "../../redux/store";
+import ThemeProvider from "./provider";
+import ThemeSwitch from "./components/ThemeSwtich";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,9 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Header />
-          <Skills />
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Header />
+            <Skills />
+            {children}
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../../../redux/menu";
 import Link from "next/link";
+import ThemeSwitch from "../components/ThemeSwtich";
 
 type Props = {};
 
@@ -28,6 +29,7 @@ const Header = (props: Props) => {
         <Link href="/" className="logo relative z-50">
           Logo
         </Link>
+        <ThemeSwitch />
         <button onClick={toggleMenu} className="relative z-30">
           Menu
         </button>

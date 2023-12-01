@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import { openSkills } from "../../../redux/skills";
 import { useDispatch } from "react-redux";
 import FooterButton from "../components/FooterButton";
+import PageTitle from "../components/PageTitle";
 
 type Props = {};
 
@@ -14,7 +15,7 @@ const Page = (props: Props) => {
   const dispatch = useDispatch();
   return (
     <AnimatePresence>
-      <div className="overflow-x-hidden pt-24 pb-10 px-6">
+      <div className="overflow-x-hidden pt-24 pb-24 px-6">
         <motion.div
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -32,10 +33,8 @@ const Page = (props: Props) => {
             />
           </div>
           <div className="flex flex-col gap-6">
-            <h2 className="w-full flex gap-3 basis-full text-4xl font-semibold leading-none">
-              About <span className="border-b-2 border-black basis-full"></span>
-            </h2>
-            <p className="text-jstify text-base">
+            <PageTitle title={"About"} />
+            <p className="text-jstify text-base text-gray-700 dark:text-gray-400">
               Hello. I am Nkematu Bonaventure, a frontend developer with vast
               experience creating amazing user interfaces and user experience.
               <span className="mt-4 block">
@@ -47,7 +46,7 @@ const Page = (props: Props) => {
                   Bootstrap, TailwindCss,
                 </span>{" "}
                 <span
-                  className="bg-yellow-200 inline-block rounded font-semibold hover:bg-yellow-400 hover:text-white duration-200 leading-none"
+                  className="bg-yellow-200 text-black inline-block rounded font-semibold hover:bg-yellow-400 hover:text-white duration-200 leading-none px-1"
                   onClick={() => dispatch(openSkills())}
                 >
                   etc{" "}
