@@ -154,26 +154,32 @@ export const projects = [
     year: "2023",
     category: "Portfolio/Web App",
     tools: "HTML, CSS, React, Typescript, AntD, TailwindCss",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Page",
+        images: [
+          { src: "/projects/lachiommy/lachiommy.png" },
+          { src: "/projects/lachiommy/home.png" },
+          { src: "/projects/lachiommy/home-2.png" },
+          { src: "/projects/lachiommy/home-3.png" },
+          { src: "/projects/lachiommy/home-4.png" },
+          { src: "/projects/lachiommy/home-5.png" },
+        ],
+      },
+      {
+        title: "About page",
+        images: [{ src: "/projects/lachiommy/about.png" }],
+      },
+      {
+        title: "Services page",
+        images: [
+          { src: "/projects/lachiommy/services.png" },
+          { src: "/projects/lachiommy/services-2.png" },
+          { src: "/projects/lachiommy/services-3.png" },
+          { src: "/projects/lachiommy/services-4.png" },
+        ],
+      },
+    ],
   },
 
   {
@@ -185,26 +191,45 @@ export const projects = [
     year: "2022",
     category: "Product Landing Page",
     tools: "HTML, CSS, Javascript",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Section",
+        images: [{ src: "/projects/uknight/home.png" }],
+      },
+      {
+        title: "About Section",
+        images: [{ src: "/projects/uknight/about.png" }],
+      },
+      {
+        title: "Features Section",
+        images: [
+          { src: "/projects/uknight/features.png" },
+          { src: "/projects/uknight/features-1.png" },
+          { src: "/projects/uknight/features-2.png" },
+          { src: "/projects/uknight/features-3.png" },
+        ],
+      },
+      {
+        title: "Contact page",
+        images: [{ src: "/projects/fitfam/contact.png" }],
+      },
+      {
+        title: "Testimonials Section",
+        images: [{ src: "/projects/uknight/testimonials.png" }],
+      },
+      {
+        title: "CTA Section",
+        images: [{ src: "/projects/uknight/cta.png" }],
+      },
+      {
+        title: "Newsletter Section",
+        images: [{ src: "/projects/uknight/newsletter.png" }],
+      },
+      {
+        title: "Contact Section",
+        images: [{ src: "/projects/uknight/contact.png" }],
+      },
+    ],
   },
   {
     title: "Fit Fam",
@@ -215,26 +240,28 @@ export const projects = [
     year: "2022",
     category: "Business Website",
     tools: "HTML, CSS, Javascript, JQuery",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Page",
+        images: [
+          { src: "/projects/fitfam/home.png" },
+          { src: "/projects/fitfam/home-ii.png" },
+          { src: "/projects/fitfam/home-iii.png" },
+        ],
+      },
+      {
+        title: "About page",
+        images: [{ src: "/projects/fitfam/about.png" }],
+      },
+      {
+        title: "Services page",
+        images: [{ src: "/projects/fitfam/services.png" }],
+      },
+      {
+        title: "Contact page",
+        images: [{ src: "/projects/fitfam/contact.png" }],
+      },
+    ],
   },
   {
     title: "Proflix",
@@ -245,26 +272,28 @@ export const projects = [
     year: "2021",
     category: "Side Project",
     tools: "HTML, CSS, React, Material Ui, TailwindCss",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Page",
+        images: [
+          { src: "/projects/fitfam/home.png" },
+          { src: "/projects/fitfam/home-ii.png" },
+          { src: "/projects/fitfam/home-iii.png" },
+        ],
+      },
+      {
+        title: "About page",
+        images: [{ src: "/projects/fitfam/about.png" }],
+      },
+      {
+        title: "Services page",
+        images: [{ src: "/projects/fitfam/services.png" }],
+      },
+      {
+        title: "Contact page",
+        images: [{ src: "/projects/fitfam/contact.png" }],
+      },
+    ],
   },
   {
     title: "Grampro",
@@ -275,26 +304,28 @@ export const projects = [
     year: "2022",
     category: "Full Stack App/Side Project",
     tools: "HTML, CSS, Sass, Firebase, Firestore",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Page",
+        images: [
+          { src: "/projects/fitfam/home.png" },
+          { src: "/projects/fitfam/home-ii.png" },
+          { src: "/projects/fitfam/home-iii.png" },
+        ],
+      },
+      {
+        title: "About page",
+        images: [{ src: "/projects/fitfam/about.png" }],
+      },
+      {
+        title: "Services page",
+        images: [{ src: "/projects/fitfam/services.png" }],
+      },
+      {
+        title: "Contact page",
+        images: [{ src: "/projects/fitfam/contact.png" }],
+      },
+    ],
   },
   {
     title: "Big Shotz Photography",
@@ -305,25 +336,27 @@ export const projects = [
     year: "2021",
     category: "Business Portfolio",
     tools: "HTML, CSS, React, Next.js, Typescript, AntD, TailwindCss",
-    imageOne: {
-      title: "Home Page",
-      images: [
-        { src: "/projects/fitfam/home.png" },
-        { src: "/projects/fitfam/home-ii.png" },
-        { src: "/projects/fitfam/home-iii.png" },
-      ],
-    },
-    imageTwo: {
-      title: "About page",
-      images: [{ src: "/projects/fitfam/about.png" }],
-    },
-    imageThree: {
-      title: "Services page",
-      images: [{ src: "/projects/fitfam/services.png" }],
-    },
-    imageFour: {
-      title: "Contact page",
-      images: [{ src: "/projects/fitfam/contact.png" }],
-    },
+    projectImages: [
+      {
+        title: "Home Page",
+        images: [
+          { src: "/projects/fitfam/home.png" },
+          { src: "/projects/fitfam/home-ii.png" },
+          { src: "/projects/fitfam/home-iii.png" },
+        ],
+      },
+      {
+        title: "About page",
+        images: [{ src: "/projects/fitfam/about.png" }],
+      },
+      {
+        title: "Services page",
+        images: [{ src: "/projects/fitfam/services.png" }],
+      },
+      {
+        title: "Contact page",
+        images: [{ src: "/projects/fitfam/contact.png" }],
+      },
+    ],
   },
 ];

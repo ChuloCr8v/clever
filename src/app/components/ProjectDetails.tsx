@@ -1,37 +1,21 @@
-import React from "react";
+import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
-import Image from "next/image";
-import PageTitle from "./PageTitle";
 import Button from "./Button";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type Props = {
   data: {
     url: string;
     img: string;
-    imageTwo: {
-      title: string;
+    projectImages: {
       images: { src: string }[];
-    };
-    imageOne: {
       title: string;
-      images: { src: string }[];
-    };
-    imageThree: {
-      title: string;
-      images: { src: string }[];
-    };
-    imageFour: {
-      title: string;
-      images: { src: string }[];
-    };
+    }[];
     description: string;
     category: string;
     tools: string;
     year: string;
-
     title: string;
   };
 };
@@ -116,22 +100,9 @@ const ProjectDetails = (props: Props) => {
         <Button title={"Github Repo"} link={props.data.url} />
       </div>
       <div className="">
-        <ProjectImages
-          dataRef={props.data?.imageOne?.images}
-          title={props.data?.imageOne?.title}
-        />
-        <ProjectImages
-          dataRef={props.data?.imageTwo?.images}
-          title={props.data?.imageTwo?.title}
-        />
-        <ProjectImages
-          dataRef={props.data?.imageThree?.images}
-          title={props.data?.imageThree?.title}
-        />
-        <ProjectImages
-          dataRef={props.data?.imageFour?.images}
-          title={props.data?.imageFour?.title}
-        />
+        {props.data?.projectImages?.map((img, index) => (
+          <ProjectImages dataRef={img.images} title={img.title} />
+        ))}
       </div>
     </section>
   );

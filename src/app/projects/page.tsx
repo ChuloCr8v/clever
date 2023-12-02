@@ -17,22 +17,10 @@ import FooterButton from "../components/FooterButton";
 type Props = {};
 type dataProps = {
   img: string;
-  imageTwo: {
-    title: string;
+  projectImages: {
     images: { src: string }[];
-  };
-  imageOne: {
     title: string;
-    images: { src: string }[];
-  };
-  imageThree: {
-    title: string;
-    images: { src: string }[];
-  };
-  imageFour: {
-    title: string;
-    images: { src: string }[];
-  };
+  }[];
   description: string;
   category: string;
   tools: string;
@@ -43,22 +31,12 @@ type dataProps = {
 
 const dataPropsHooks = {
   img: "",
-  imageTwo: {
-    title: "",
-    images: [{ src: "" }],
-  },
-  imageOne: {
-    title: "",
-    images: [{ src: "" }],
-  },
-  imageThree: {
-    title: "",
-    images: [{ src: "" }],
-  },
-  imageFour: {
-    title: "",
-    images: [{ src: "" }],
-  },
+  projectImages: [
+    {
+      images: [{ src: "" }],
+      title: "",
+    },
+  ],
   description: "",
   category: "",
   tools: "",
