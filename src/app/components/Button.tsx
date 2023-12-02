@@ -19,7 +19,7 @@ const Button = (props: Props) => {
         <Link
           href={props.link}
           className={twMerge(
-            "flex items-center gap-2 py-2 px-3 hover:border-gray-700 border-transparent border rounded leading-none",
+            "flex items-center gap-2 py-2 hover:px-3 hover:border-gray-700 border-transparent border rounded leading-none duration-200",
             props.className
           )}
         >

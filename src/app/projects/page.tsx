@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import PageTitle from "../components/PageTitle";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer";
+import { AnimatePresence, motion } from "framer";
 import { projects } from "../data";
 import ProjectDetails from "../components/ProjectDetails";
 import {
@@ -12,6 +12,7 @@ import {
   openProjectDetails,
 } from "../../../redux/projectDetails";
 import { useDispatch, useSelector } from "react-redux";
+import FooterButton from "../components/FooterButton";
 
 type Props = {};
 type dataProps = {
@@ -40,35 +41,37 @@ type dataProps = {
   title: string;
 };
 
+const dataPropsHooks = {
+  img: "",
+  imageTwo: {
+    title: "",
+    images: [{ src: "" }],
+  },
+  imageOne: {
+    title: "",
+    images: [{ src: "" }],
+  },
+  imageThree: {
+    title: "",
+    images: [{ src: "" }],
+  },
+  imageFour: {
+    title: "",
+    images: [{ src: "" }],
+  },
+  description: "",
+  category: "",
+  tools: "",
+  year: "",
+  url: "",
+  title: "",
+};
+
 const Page = (props: Props) => {
   const [currentProjectImage, setCurrentProjectImage] = useState(
     "/projects/lachiommy.png"
   );
-  const [projectData, setProjectData] = useState<dataProps>({
-    img: "",
-    imageTwo: {
-      title: "",
-      images: [{ src: "" }],
-    },
-    imageOne: {
-      title: "",
-      images: [{ src: "" }],
-    },
-    imageThree: {
-      title: "",
-      images: [{ src: "" }],
-    },
-    imageFour: {
-      title: "",
-      images: [{ src: "" }],
-    },
-    description: "",
-    category: "",
-    tools: "",
-    year: "",
-    url: "",
-    title: "",
-  });
+  const [projectData, setProjectData] = useState<dataProps>(dataPropsHooks);
   const { isProjectDetailsOpen } = useSelector(
     (state: { projectDetails: { isProjectDetailsOpen: boolean } }) =>
       state.projectDetails
@@ -85,31 +88,48 @@ const Page = (props: Props) => {
   };
 
   return (
-    <section className=" pt-24 pb-24 px-6">
-      <div className="container flex flex-col gap-6">
-        <Image
-          src={currentProjectImage}
-          height={400}
-          width={400}
-          alt={"frontend developer portfolio"}
-          className="rounded-lg"
-        />
-        <PageTitle title={"Projects"} />
-        <div className="">
-          {projects.map((d, index) => (
-            <div
-              onClick={() => toggleProjectDetails(d)}
-              className="group hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 flex justify-between items-center duration-200"
-              key={index}
-            >
-              {d.title}
-              <FaArrowRight className="group-hover:-rotate-[35deg] duration-200" />
+    <AnimatePresence>
+      <div className="overflow-hidden">
+        <motion.section
+          className="pt-24 pb-24 px-6"
+          initial={{ x: "100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100vw", opacity: 0 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+        >
+          <div className="container flex flex-col gap-6">
+            <Image
+              src={currentProjectImage}
+              height={400}
+              width={400}
+              alt={"frontend developer portfolio"}
+              className="rounded-lg"
+            />
+            <PageTitle title={"Projects"} />
+            <div className="">
+              {projects.map((d, index) => (
+                <div
+                  onClick={() => toggleProjectDetails(d)}
+                  className="group hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 flex justify-between items-center duration-200"
+                  key={index}
+                >
+                  {d.title}
+                  <FaArrowRight className="group-hover:-rotate-[35deg] duration-200" />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+          <ProjectDetails data={projectData} />
+        </motion.section>
       </div>
-      <ProjectDetails data={projectData} />
-    </section>
+      <FooterButton
+        prevTitle={"About Me"}
+        nextTitle={"Contact"}
+        icon={false}
+        nextLink="/contact"
+        prevLink="/about"
+      />
+    </AnimatePresence>
   );
 };
 

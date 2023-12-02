@@ -45,11 +45,7 @@ const ProjectDetails = (props: Props) => {
   const dispatch = useDispatch();
 
   const ImageTitle = (props: { title: string }) => {
-    return (
-      <p className="text-center my-6 font-bold text-lg uppercase">
-        {props.title}
-      </p>
-    );
+    return <p className="text-center my-6 font-bold text-lg ">{props.title}</p>;
   };
 
   const DetailRow = (props: { rowTitle: string; rowData?: string }) => {
@@ -110,7 +106,10 @@ const ProjectDetails = (props: Props) => {
         <DetailRow rowTitle={"Tools"} rowData={props.data.tools} />
         <DetailRow rowTitle={"Year"} rowData={props.data.year} />
       </div>
-      <p className="my-6">{props.data.description}</p>
+      <p className="mt-8 text-lg font-semibold text-primaryBlue dark:text-primaryRed">
+        About
+      </p>
+      <p className="mt-2 mb-6">{props.data.description}</p>
       <div className="flex gap-4">
         {" "}
         <Button title={"Visit Project"} link={props.data.url} />
