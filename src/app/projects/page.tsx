@@ -69,7 +69,7 @@ const Page = (props: Props) => {
     <AnimatePresence>
       <div className="overflow-hidden">
         <motion.section
-          className="pt-24 pb-24 px-6"
+          className="pt-24 pb-32 px-6"
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100vw", opacity: 0 }}

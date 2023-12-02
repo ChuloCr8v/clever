@@ -35,7 +35,7 @@ const FooterButton = (props: Props) => {
         !isVisible && "translate-y-[100vh]"
       )}
     >
-      <div className="container flex justify-between items-center bg-gray-700 text-white shadow border border-opacity-50 rounded-md">
+      <div className="container flex justify-between items-center bg-gray-700 py-1 text-white shadow border border-opacity-50 rounded-md">
         <Button
           title={props.prevTitle}
           link={props.prevLink}
