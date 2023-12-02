@@ -83,7 +83,13 @@ const Page = (props: Props) => {
               alt={"frontend developer portfolio"}
               className="rounded-lg"
             />
-            <PageTitle title={"Projects"} />
+            <div className="flex justify-between items-center">
+              {" "}
+              <PageTitle title={"Projects"} />
+              <span className="bg-gray-800 dark:bg-gray-300 text-gray-300 dark:text-gray-800 font-bold h-7 w-7 rounded flex items-center justify-center ml-4">
+                {projects.length}
+              </span>
+            </div>
             <div className="">
               {projects.map((d, index) => (
                 <div
