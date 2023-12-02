@@ -101,7 +101,7 @@ const ProjectDetails = (props: Props) => {
       </div>
       <div className="">
         {props.data?.projectImages?.map((img, index) => (
-          <ProjectImages dataRef={img.images} title={img.title} />
+          <ProjectImages dataRef={img.images} title={img.title} key={index} />
         ))}
       </div>
     </section>
