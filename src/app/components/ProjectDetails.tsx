@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
-import Button from "./Button";
-import { useEffect } from "react";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 type Props = {
   projectDetails: {
@@ -34,11 +34,13 @@ const ProjectDetails = () => {
       state.projectDetails
   );
 
+  const currentPage = window?.location?.pathname;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    window.scrollY = 0;
-  }, []);
+    !currentPage.includes("/projects") ? dispatch(closeProjectDetails()) : "";
+  }, [currentPage]);
 
   const ImageTitle = (props: { title: string }) => {
     return (

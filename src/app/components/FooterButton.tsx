@@ -35,19 +35,19 @@ const FooterButton = (props: Props) => {
         !isVisible && "translate-y-[100vh]"
       )}
     >
-      <div className="container flex justify-between items-center bg-gray-700 py-1 text-white shadow border border-opacity-50 rounded-md">
+      <div className="container flex justify-between items-center bg-gray-700  text-white rounded-md">
         <Button
           title={props.prevTitle}
           link={props.prevLink}
           icon={props.icon}
           prevBtn
-          className="px-4 py-2  hover:bg-black text-sm"
+          className="px-4 py-3  hover:bg-black text-sm"
         />
         <Button
           title={props.nextTitle}
           link={props.nextLink}
           icon={props.icon}
-          className="px-4 py-2  hover:bg-black text-sm"
+          className="px-4 py-3  hover:bg-black text-sm"
         />
       </div>
     </div>
