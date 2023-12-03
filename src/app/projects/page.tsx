@@ -61,7 +61,7 @@ const Page = (props: Props) => {
     setCurrentProjectImage(details.img);
     setProjectData(details);
     dispatch(
-      isProjectDetailsOpen ? closeProjectDetails() : openProjectDetails()
+      isProjectDetailsOpen ? closeProjectDetails() : openProjectDetails(details)
     );
   };
 
@@ -94,7 +94,7 @@ const Page = (props: Props) => {
               {projects.map((d, index) => (
                 <div
                   onClick={() => toggleProjectDetails(d)}
-                  className="group hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 flex justify-between items-center duration-200"
+                  className="group dark:text-gray-400 text-gray-500 hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 flex justify-between items-center duration-200"
                   key={index}
                 >
                   {d.title}
@@ -103,7 +103,7 @@ const Page = (props: Props) => {
               ))}
             </div>
           </div>
-          <ProjectDetails data={projectData} />
+          <ProjectDetails />
         </motion.section>
       </div>
       <FooterButton

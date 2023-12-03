@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
 import Button from "./Button";
+import { useEffect } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 type Props = {
-  data: {
+  projectDetails: {
     url: string;
     img: string;
     projectImages: {
@@ -20,16 +24,28 @@ type Props = {
   };
 };
 
-const ProjectDetails = (props: Props) => {
+const ProjectDetails = () => {
   const { isProjectDetailsOpen } = useSelector(
     (state: { projectDetails: { isProjectDetailsOpen: boolean } }) =>
+      state.projectDetails
+  );
+  const { projectDetails } = useSelector(
+    (state: { projectDetails: { projectDetails: Props["projectDetails"] } }) =>
       state.projectDetails
   );
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    window.scrollY = 0;
+  }, []);
+
   const ImageTitle = (props: { title: string }) => {
-    return <p className="text-center my-6 font-bold text-lg ">{props.title}</p>;
+    return (
+      <p className="text-center my-6 font-bold text-lg  dark:text-primaryRed text-primaryBlue">
+        {props.title}
+      </p>
+    );
   };
 
   const DetailRow = (props: { rowTitle: string; rowData?: string }) => {
@@ -38,7 +54,9 @@ const ProjectDetails = (props: Props) => {
         <p className=" basis-full font-bold dark:text-primaryRed text-primaryBlue">
           {props.rowTitle}
         </p>
-        <p className="text-left basis-full">{props.rowData}</p>
+        <p className="text-left basis-full dark:text-gray-400 text-gray-500">
+          {props.rowData}
+        </p>
       </div>
     );
   };
@@ -75,32 +93,49 @@ const ProjectDetails = (props: Props) => {
       )}
     >
       <Image
-        src={props.data.img}
+        src={projectDetails.img}
         alt="frontend developer"
         height={500}
         width={500}
         className="rounded-lg"
       />
       <h2 className="font-bold text-2xl border-b dark:border-gray-200 border-gray-500 pb-2 mt-6">
-        {" "}
-        {props.data.title}
+        {projectDetails.title}
       </h2>
       <div className="flex flex-col gap-4 mt-6">
-        <DetailRow rowTitle={"Category"} rowData={props.data.category} />
-        <DetailRow rowTitle={"Tools"} rowData={props.data.tools} />
-        <DetailRow rowTitle={"Year"} rowData={props.data.year} />
+        {[
+          { title: "Category", data: projectDetails.category },
+          { title: "Tools", data: projectDetails.tools },
+          { title: "Year", data: projectDetails.year },
+        ].map((d, index) => (
+          <DetailRow rowTitle={d.title} rowData={d.data} key={index} />
+        ))}
       </div>
       <p className="mt-8 text-lg font-semibold text-primaryBlue dark:text-primaryRed">
         About
       </p>
-      <p className="mt-2 mb-6">{props.data.description}</p>
+      <p className="mt-2 mb-6 dark:text-gray-400 text-gray-500">
+        {projectDetails.description}
+      </p>
       <div className="flex gap-4">
-        {" "}
-        <Button title={"Visit Project"} link={props.data.url} />
-        <Button title={"Github Repo"} link={props.data.url} />
+        {[
+          { title: "Visit Project", data: projectDetails.url },
+          { title: "Github Repo", data: projectDetails.url },
+        ].map((d, index) => (
+          <a
+            href={projectDetails.url}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[14px] dark:text-gray-400 text-gray-500 dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
+          >
+            {d.title}
+            <FaArrowAltCircleRight />
+          </a>
+        ))}
       </div>
       <div className="">
-        {props.data?.projectImages?.map((img, index) => (
+        {projectDetails?.projectImages?.map((img, index) => (
           <ProjectImages dataRef={img.images} title={img.title} key={index} />
         ))}
       </div>

@@ -17,8 +17,6 @@ const Button = (props: Props) => {
     <div>
       {props.link ? (
         <Link
-          target="_blank"
-          rel="noopener noreferrer"
           href={props.link}
           className={twMerge(
             "flex items-center gap-2 py-2 hover:px-3 hover:border-gray-700 border-transparent border rounded leading-none duration-200",
