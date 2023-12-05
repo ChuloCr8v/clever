@@ -103,14 +103,37 @@ const Contact = (props: Props) => {
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
             <form name="contact" method="POST" data-netlify="true">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" required />
+              <label data-type="hidden" htmlFor="name">
+                Name:
+              </label>
+              <input
+                data-type="hidden"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
 
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <label data-type="hidden" htmlFor="email">
+                Email:
+              </label>
+              <input
+                data-type="hidden"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
 
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" name="message" required></textarea>
+              <label htmlFor="message" data-type="hidden">
+                Message:
+              </label>
+              <textarea
+                data-type="hidden"
+                id="message"
+                name="message"
+                required
+              ></textarea>
 
               <button type="submit">Submit</button>
             </form>
