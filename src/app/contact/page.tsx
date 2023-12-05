@@ -102,46 +102,17 @@ const Contact = (props: Props) => {
             ))}
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
-            <form
-              action={"/"}
-              name="contact clever"
-              method="POST"
-              data-netlify="true"
-              className="flex flex-col items-start gap-4 w-full"
-            >
-              <div className="text-center w-full py-12 border dark:border-gray-500 border-gray-400 rounded">
-                <p className="text-3xl font-semibold">Message Me</p>
-                <p className=" mt-1 text-gray-500 dark:text-gray-400">
-                  Patiently waiting....
-                </p>
-              </div>
+            <form name="contact" method="POST" data-netlify="true">
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" required />
 
-              <FormGroup
-                label={"name"}
-                placeholder={"Enter name here"}
-                name={"name"}
-                type={"hidden"}
-              />
-              <FormGroup
-                label={"email"}
-                placeholder={"Enter email here"}
-                name={"email"}
-                type={"hidden"}
-              />
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" required />
 
-              <div className={formGroupClassName}>
-                <label htmlFor="" className={labelClassName} data-type="hidden">
-                  Message
-                </label>
-                <textarea
-                  className={inputClassName}
-                  placeholder="Write me a message"
-                  cols={12}
-                  data-name={"message"}
-                  data-type={"hidden"}
-                />
-              </div>
-              <Button title={"Send"} className="mt-4" />
+              <label htmlFor="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+
+              <button type="submit">Submit</button>
             </form>
           </div>
         </motion.section>
