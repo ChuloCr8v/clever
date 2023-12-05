@@ -53,6 +53,7 @@ const Contact = (props: Props) => {
         </label>
         <input
           type="text"
+          data-type="hidden"
           placeholder={props.placeholder}
           className={inputClassName}
         />
@@ -128,7 +129,7 @@ const Contact = (props: Props) => {
               />
 
               <div className={formGroupClassName}>
-                <label htmlFor="" className={labelClassName}>
+                <label htmlFor="" className={labelClassName} data-type="hidden">
                   Message
                 </label>
                 <textarea
