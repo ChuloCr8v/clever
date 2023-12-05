@@ -36,10 +36,19 @@ const Contact = (props: Props) => {
   const formGroupClassName = "flex flex-col items-start gap-2 w-full";
   const labelClassName = "capitalize font-semibold";
 
-  const FormGroup = (props: { label: string; placeholder: string }) => {
+  const FormGroup = (props: {
+    label: string;
+    placeholder: string;
+    name: string;
+    type: string;
+  }) => {
     return (
       <div className={formGroupClassName}>
-        <label htmlFor="" className={labelClassName}>
+        <label
+          data-type="hidden"
+          data-name={props.name}
+          className={labelClassName}
+        >
           {props.label}
         </label>
         <input
@@ -93,7 +102,7 @@ const Contact = (props: Props) => {
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
             <form
-              name="contact"
+              name="contact clever"
               method="POST"
               data-netlify="true"
               className="flex flex-col items-start gap-4 w-full"
@@ -105,8 +114,18 @@ const Contact = (props: Props) => {
                 </p>
               </div>
 
-              <FormGroup label={"name"} placeholder={"Enter name here"} />
-              <FormGroup label={"email"} placeholder={"Enter email here"} />
+              <FormGroup
+                label={"name"}
+                placeholder={"Enter name here"}
+                name={"name"}
+                type={"hidden"}
+              />
+              <FormGroup
+                label={"email"}
+                placeholder={"Enter email here"}
+                name={"email"}
+                type={"hidden"}
+              />
 
               <div className={formGroupClassName}>
                 <label htmlFor="" className={labelClassName}>
@@ -116,6 +135,8 @@ const Contact = (props: Props) => {
                   className={inputClassName}
                   placeholder="Write me a message"
                   cols={12}
+                  data-name={"message"}
+                  data-type={"hidden"}
                 />
               </div>
               <Button title={"Send"} className="mt-4" />
