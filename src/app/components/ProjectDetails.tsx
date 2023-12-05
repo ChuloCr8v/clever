@@ -40,7 +40,7 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     !currentPage.includes("/projects") ? dispatch(closeProjectDetails()) : "";
-  }, [currentPage]);
+  }, [currentPage, dispatch]);
 
   const ImageTitle = (props: { title: string }) => {
     return (

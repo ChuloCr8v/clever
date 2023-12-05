@@ -267,7 +267,7 @@ export const projects = [
     title: "Proflix",
     description:
       "Proflix is a movie database app that can be used to get information about movies including their release date, average ratings and trailer. Movies were fetched from TheMovieDatabase.",
-    img: "/projects/fitfam.png",
+    img: "/projects/proflix.png",
     url: "https://proflix.vercel.app/",
     year: "2021",
     category: "Side Project",
@@ -275,23 +275,16 @@ export const projects = [
     projectImages: [
       {
         title: "Home Page",
+        images: [{ src: "/projects/proflix/home.png" }],
+      },
+      {
+        title: "Categories",
         images: [
-          { src: "/projects/fitfam/home.png" },
-          { src: "/projects/fitfam/home-ii.png" },
-          { src: "/projects/fitfam/home-iii.png" },
+          { src: "/projects/proflix/category.png" },
+          { src: "/projects/proflix/category-2.png" },
+          { src: "/projects/proflix/category-3.png" },
+          { src: "/projects/proflix/category-4.png" },
         ],
-      },
-      {
-        title: "About page",
-        images: [{ src: "/projects/fitfam/about.png" }],
-      },
-      {
-        title: "Services page",
-        images: [{ src: "/projects/fitfam/services.png" }],
-      },
-      {
-        title: "Contact page",
-        images: [{ src: "/projects/fitfam/contact.png" }],
       },
     ],
   },
@@ -299,7 +292,7 @@ export const projects = [
     title: "Grampro",
     description:
       "This is a Photo Bucket that allows uploading of pictures and preview of uploaded pictures. The uploaded pictures are stored with Google Firebase which acts as the backend.",
-    img: "/projects/fitfam.png",
+    img: "/projects/grampro.png",
     url: "https://grampro.netlify.app/",
     year: "2022",
     category: "Full Stack App/Side Project",
@@ -307,23 +300,11 @@ export const projects = [
     projectImages: [
       {
         title: "Home Page",
-        images: [
-          { src: "/projects/fitfam/home.png" },
-          { src: "/projects/fitfam/home-ii.png" },
-          { src: "/projects/fitfam/home-iii.png" },
-        ],
+        images: [{ src: "/projects/grampro.png" }],
       },
       {
-        title: "About page",
-        images: [{ src: "/projects/fitfam/about.png" }],
-      },
-      {
-        title: "Services page",
-        images: [{ src: "/projects/fitfam/services.png" }],
-      },
-      {
-        title: "Contact page",
-        images: [{ src: "/projects/fitfam/contact.png" }],
+        title: "Picture preview",
+        images: [{ src: "/projects/grampro/preview.png" }],
       },
     ],
   },
@@ -331,7 +312,7 @@ export const projects = [
     title: "Big Shotz Photography",
     description:
       "This is a photography portfolio website designed to showcase the profile of a photographer. It contains details about the photographer such as skills, services, picture gallery and contact details. Images were fetched from unsplash api. It also includes a search bar where you can search for different images.",
-    img: "/projects/fitfam.png",
+    img: "/projects/bigshotz/home.png",
     url: "https://bigshotz.vercel.app/",
     year: "2021",
     category: "Business Portfolio",
@@ -339,23 +320,31 @@ export const projects = [
     projectImages: [
       {
         title: "Home Page",
-        images: [
-          { src: "/projects/fitfam/home.png" },
-          { src: "/projects/fitfam/home-ii.png" },
-          { src: "/projects/fitfam/home-iii.png" },
-        ],
+        images: [{ src: "/projects/bigshotz/home.png" }],
       },
       {
         title: "About page",
-        images: [{ src: "/projects/fitfam/about.png" }],
+        images: [
+          { src: "/projects/bigshotz/about.png" },
+          { src: "/projects/bigshotz/about-1.png" },
+          { src: "/projects/bigshotz/about-2.png" },
+        ],
       },
       {
         title: "Services page",
-        images: [{ src: "/projects/fitfam/services.png" }],
+        images: [
+          { src: "/projects/bigshotz/services.png" },
+          { src: "/projects/bigshotz/services-1.png" },
+        ],
       },
       {
-        title: "Contact page",
-        images: [{ src: "/projects/fitfam/contact.png" }],
+        title: "Gallery page",
+        images: [
+          { src: "/projects/bigshotz/gallery.png" },
+          { src: "/projects/bigshotz/gallery-1.png" },
+          { src: "/projects/bigshotz/gallery-2.png" },
+          { src: "/projects/bigshotz/gallery-3.png" },
+        ],
       },
     ],
   },
