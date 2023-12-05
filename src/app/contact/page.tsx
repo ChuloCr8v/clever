@@ -103,6 +103,7 @@ const Contact = (props: Props) => {
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
             <form
+              action={"/"}
               name="contact clever"
               method="POST"
               data-netlify="true"
