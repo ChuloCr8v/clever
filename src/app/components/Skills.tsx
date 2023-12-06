@@ -18,7 +18,7 @@ const Skills = (props: Props) => {
   const SkillSectionTitle = (props: { title: string }) => {
     return (
       <div className="flex items-end gap-4">
-        <p className="leading-none text-primaryBlue font-semibold">
+        <p className="leading-none text-primaryBlue font-semibold md:text-xl">
           {props.title}
         </p>
         <div className="border-b border-graay-800 basis-full "></div>{" "}
@@ -45,7 +45,7 @@ const Skills = (props: Props) => {
             .map((s, index) => (
               <p
                 key={index}
-                className="text-sm bg-gray-100 text-center px-4 py-[1px] rounded-full dark:text-gray-700"
+                className="text-sm md:text-lg bg-gray-100 text-center px-4 py-[1px] md:py-1 rounded-full dark:text-gray-700"
               >
                 {s.skill}
               </p>
@@ -78,12 +78,16 @@ const Skills = (props: Props) => {
           </motion.div>
 
           <div className="container space-y-6 overflow-y-scroll h-full pb-28 pt-2">
-            <SkillSection title={"Languages"} type={"language"} />
-            <SkillSection title={"Styling"} type={"style"} />
-            <SkillSection title={"Frameworks"} type={"framework"} />
-            <SkillSection title={"Databases"} type={"database"} />
-            <SkillSection title={"Design"} type={"design"} />
-            <SkillSection title={"More"} type={"others"} />
+            {[
+              { title: "Languages", type: "language" },
+              { title: "Styling", type: "style" },
+              { title: "Frameworks", type: "framework" },
+              { title: "Databases", type: "database" },
+              { title: "Design", type: "design" },
+              { title: "More", type: "others" },
+            ].map((d, index) => (
+              <SkillSection title={d.title} type={d.type} />
+            ))}
           </div>
         </motion.section>
       )}

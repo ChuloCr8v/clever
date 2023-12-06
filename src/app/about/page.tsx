@@ -15,32 +15,32 @@ const Page = (props: Props) => {
   const dispatch = useDispatch();
   return (
     <AnimatePresence>
-      <div className="overflow-x-hidden pt-24 pb-24 px-6">
+      <div className="overflow-x-hidden flex flex-col items-center justify-center pt-24 pb-24 px-6 min-h-screen">
         <motion.div
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100vw", opacity: 0 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-          className="grid gap-6"
+          className="grid gap-6 xl:gap-12 xl:flex max-w-7xl"
         >
-          <div className="rounded-xl shadow overflow-hidden">
+          <div className="rounded-xl shadow h-fit xl:h-full overflow-hidden basis-full">
             <Image
               src={"/me-bg.jpg"}
               alt={"clever dev frontend developer"}
               height={500}
               width={500}
-              className=""
+              className="w-full object-top"
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 md:mt-8 xl:mt-0 h-fit">
             <PageTitle title={"About"} />
-            <p className="text-jstify text-base text-gray-700 dark:text-gray-400">
+            <p className="text-justify text-base md:text-xl text-gray-700 dark:text-gray-400">
               Hello. I am Nkematu Bonaventure, a frontend developer with vast
               experience creating amazing user interfaces and user experience.
               <span className="mt-4 block">
                 {" "}
                 My work stacks include{" "}
-                <span className="font-semibold lowercase">
+                <span className="font-semibold lowercase text-primaryBlue dark:text-primaryRed">
                   {" "}
                   HTML5, CSS3, JavaScript, React.js, Next.js, WordPress, Sass,
                   Bootstrap, TailwindCss,
@@ -59,6 +59,7 @@ const Page = (props: Props) => {
               <Button
                 title={"Skills/Tools"}
                 onclick={() => dispatch(openSkills())}
+                className="w-fit px-2"
               />
               <Button title={"My Github"} link="https://github.com/chulocr8v" />{" "}
             </div>

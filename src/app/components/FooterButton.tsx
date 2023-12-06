@@ -31,11 +31,11 @@ const FooterButton = (props: Props) => {
   return (
     <div
       className={twMerge(
-        "fixed bottom-4 w-full px-4 translate-y-0 duration-300",
+        "fixed bottom-4 w-full px-4 translate-y-0 duration-300 flex justify-center items-center",
         !isVisible && "translate-y-[100vh]"
       )}
     >
-      <div className="container flex justify-between items-center bg-gray-700 md:bg-transparent text-white rounded-md">
+      <div className="container flex justify-between items-center bg-gray-700 md:bg-transparent  text-white rounded-md">
         <Button
           title={props.prevTitle}
           link={props.prevLink}
