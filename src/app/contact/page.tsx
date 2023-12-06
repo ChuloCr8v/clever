@@ -102,7 +102,7 @@ const Contact = (props: Props) => {
             ))}
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
-            <form
+            {/* <form
               action={"/"}
               name="contact clever"
               method="POST"
@@ -142,6 +142,30 @@ const Contact = (props: Props) => {
                 />
               </div>
               <Button title={"Send"} className="mt-4" />
+            </form> */}
+
+            <form
+              action="/"
+              className=""
+              name="contact clever"
+              method="POST"
+              data-netlify="true"
+            >
+              <input
+                type="text"
+                placeholder="name"
+                className="text"
+                data-type="hidden"
+                data-name="name"
+              />
+              <input
+                type="email"
+                placeholder="email"
+                className="text"
+                data-type="hidden"
+                data-name="email"
+              />
+              <input type="submit" className="submit" placeholder="submit" />
             </form>
           </div>
         </motion.section>
