@@ -5,10 +5,16 @@ import { FaArrowRight } from "react-icons/fa";
 import FooterButton from "../components/FooterButton";
 import PageTitle from "../components/PageTitle";
 import Button from "../components/Button";
+import { ChangeEventHandler, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 type Props = {};
 
 const Contact = (props: Props) => {
+  const [name, setName] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   const contacts = [
     {
       title: "Mail",
@@ -39,27 +45,23 @@ const Contact = (props: Props) => {
   const FormGroup = (props: {
     label: string;
     placeholder: string;
-    name: string;
     type: string;
+    handleChange: ChangeEventHandler<HTMLInputElement>;
   }) => {
     return (
       <div className={formGroupClassName}>
-        <label
-          data-type="hidden"
-          data-name={props.name}
-          className={labelClassName}
-        >
-          {props.label}
-        </label>
+        <label className={labelClassName}>{props.label}</label>
         <input
-          type="text"
-          data-type="hidden"
+          type={props.type}
           placeholder={props.placeholder}
           className={inputClassName}
+          onChange={() => props.handleChange}
         />
       </div>
     );
   };
+
+  const mailtoLink = `mailto:${"chulocr8v@gmail.com"}?subject=${subject}&body=${message}`;
 
   return (
     <AnimatePresence>
@@ -102,7 +104,7 @@ const Contact = (props: Props) => {
             ))}
           </div>
           <div className="form mt-24 border dark:border-gray-500 border-gray-400 rounded p-3 pb-12">
-            {/* <form
+            <form
               action={"/"}
               name="contact clever"
               method="POST"
@@ -119,14 +121,14 @@ const Contact = (props: Props) => {
               <FormGroup
                 label={"name"}
                 placeholder={"Enter name here"}
-                name={"name"}
-                type={"hidden"}
+                type={"text"}
+                handleChange={(e) => setName(e.target.value)}
               />
               <FormGroup
-                label={"email"}
-                placeholder={"Enter email here"}
-                name={"email"}
-                type={"hidden"}
+                label={"Subject"}
+                placeholder={"Enter subject here"}
+                type={"text"}
+                handleChange={(e) => setSubject(e.target.value)}
               />
 
               <div className={formGroupClassName}>
@@ -139,33 +141,19 @@ const Contact = (props: Props) => {
                   cols={12}
                   data-name={"message"}
                   data-type={"hidden"}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    console.log(message);
+                  }}
                 />
               </div>
-              <Button title={"Send"} className="mt-4" />
-            </form> */}
-
-            <form
-              action="/"
-              className=""
-              name="contact clever"
-              method="POST"
-              data-netlify="true"
-            >
-              <input
-                type="text"
-                placeholder="name"
-                className="text"
-                data-type="hidden"
-                data-name="name"
-              />
-              <input
-                type="email"
-                placeholder="email"
-                className="text"
-                data-type="hidden"
-                data-name="email"
-              />
-              <input type="submit" className="submit" placeholder="submit" />
+              <a
+                href={mailtoLink}
+                className="bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2"
+              >
+                Send{" "}
+                <FaArrowRight className={twMerge("text-sm leading-none h-3")} />
+              </a>
             </form>
           </div>
         </motion.section>
