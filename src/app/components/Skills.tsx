@@ -86,7 +86,7 @@ const Skills = (props: Props) => {
               { title: "Design", type: "design" },
               { title: "More", type: "others" },
             ].map((d, index) => (
-              <SkillSection title={d.title} type={d.type} />
+              <SkillSection title={d.title} type={d.type} key={index} />
             ))}
           </div>
         </motion.section>

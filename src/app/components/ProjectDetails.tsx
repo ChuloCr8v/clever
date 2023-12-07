@@ -80,6 +80,7 @@ const ProjectDetails = () => {
               className={twMerge(
                 "rounded-lg overflow-hidden md:h-[200px] xl:h-[300px] w-full border dark:border-none shadow"
               )}
+              key={index}
             >
               <Image
                 height={500}
