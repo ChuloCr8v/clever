@@ -79,7 +79,7 @@ const Page = (props: Props) => {
                         "Sass, Boostrap, TailwindCss, Photoshop, Canva, Adobe Illustrator.",
                     },
                   ].map((d, index) => (
-                    <ol className="">
+                    <ol className="" key={index}>
                       <li
                         className="font-bold text-gray-600 dark:text-gray-200"
                         key={index}
