@@ -82,7 +82,7 @@ const Page = (props: Props) => {
                 height={400}
                 width={400}
                 alt={"frontend developer portfolio"}
-                className="w-full xl:rounded-lg h-full"
+                className="w-full xl:rounded-lg h-full object-cover"
               />
             </div>
             <div className="w-full basis-full">
@@ -97,7 +97,7 @@ const Page = (props: Props) => {
                 {projects.map((d, index) => (
                   <div
                     onClick={() => toggleProjectDetails(d)}
-                    className="group dark:text-gray-400 md:text-xl xl:text-lg text-gray-500 hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 md:pt-8 xl:pt-4 flex justify-between items-center duration-200"
+                    className="group dark:text-gray-400 md:text-xl xl:text-xl text-gray-500 hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 md:pt-8 xl:pt-5 xl:pb-2 flex justify-between items-center duration-200"
                     key={index}
                   >
                     {d.title}
