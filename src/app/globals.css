@@ -92,10 +92,20 @@ p.menu-item:hover {
     border-bottom-left-radius: 0 !important;
     /* Optional: Add max-width to prevent the image from becoming too large on larger screens */
   }
+  .about-image_img::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+  }
 
   .about-image_img {
     min-height: 100vh !important;
     object-fit: cover;
     height: 100%;
+    position: relative;
   }
 }

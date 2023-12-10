@@ -52,7 +52,7 @@ const Nav = (props: Props) => {
                     duration: 0.4,
                     delay: 0,
                   }}
-                  className="menu-item duration-200"
+                  className="duration-200"
                 >
                   {m.title}
                 </motion.p>
