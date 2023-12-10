@@ -6,6 +6,7 @@ import { skills } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSkills } from "../../../redux/skills";
 import { motion } from "framer";
+import { FaTimes } from "react-icons/fa";
 
 type Props = {};
 
@@ -18,7 +19,7 @@ const Skills = (props: Props) => {
   const SkillSectionTitle = (props: { title: string }) => {
     return (
       <div className="flex items-end gap-4">
-        <p className="leading-none text-primaryBlue font-semibold md:text-xl">
+        <p className="leading-none text-primaryBlue dark:text-primaryRed font-semibold md:text-xl">
           {props.title}
         </p>
         <div className="border-b border-graay-800 basis-full "></div>{" "}
@@ -35,7 +36,7 @@ const Skills = (props: Props) => {
           duration: 0.3,
           delay: 0.5,
         }}
-        className="language bg-white p-4 border-1.5 shadow rounded"
+        className="language bg-gray-50 dark:bg-gray-700 100 p-4 border-1.5 shadow rounded"
       >
         <SkillSectionTitle title={props.title} />
 
@@ -45,7 +46,7 @@ const Skills = (props: Props) => {
             .map((s, index) => (
               <p
                 key={index}
-                className="text-sm md:text-lg bg-gray-100 text-center px-4 py-[1px] md:py-1 rounded-full dark:text-gray-700"
+                className="text-sm md:text-lg bg-gray-200 dark:bg-gray-600 text-center px-4 py-[1px] md:py-1 rounded-full dark:text-gray-100"
               >
                 {s.skill}
               </p>
@@ -61,23 +62,25 @@ const Skills = (props: Props) => {
         <motion.section
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          className="h-screen w-full py-12 pb-32 pt-2 px-4 fixed z-50 left-0 top-0 bg-gray-100"
+          className="h-screen  w-full pt-20 px-4 fixed z-40 left-0 top-0 bg-gray-100 dark:bg-gray-800 flex flex-col items-center"
         >
-          <motion.div className="flex items-center justify-end relative">
-            <div
-              onClick={() => dispatch(closeSkills())}
-              className="skills-close-button text-[80px] font-bold absolute -left-10 -mt-3"
-            >
-              Close
-            </div>
-            <div className="flex items-end justify-end gap-4 my-6 relative z-50">
-              <h2 className="header header-stroke font-bold text-5xl text-right leading-none">
-                Skills
-              </h2>
+          <motion.div className="container flex items-center justify-end relative w-full">
+            <div className="flex items-center justify-between w-full xl:mt-10">
+              <div className="flex items-end justify-end gap-4 my-6 relative z-50">
+                <h2 className="header header-stroke font-bold text-5xl text-right leading-none">
+                  Skills
+                </h2>
+              </div>
+              <div
+                onClick={() => dispatch(closeSkills())}
+                className="skills-close-button hover:text-primaryRed cursor-pointer text-[50px] md:text-5xl opacity-75 font-bold duration-200"
+              >
+                <FaTimes />
+              </div>
             </div>
           </motion.div>
 
-          <div className="container space-y-6 overflow-y-scroll h-full pb-28 pt-2">
+          <div className="container space-y-6 overflow-y-scroll h-full pb-28 pt-2 mt-6">
             {[
               { title: "Languages", type: "language" },
               { title: "Styling", type: "style" },

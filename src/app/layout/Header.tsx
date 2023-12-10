@@ -24,8 +24,8 @@ const Header = (props: Props) => {
   console.log(isMenuOpen);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full duration-200 ">
-      <div className="container relative flex w-full justify-between p-4">
+    <header className="fixed left-0 top-0 z-50 w-full duration-200 flex flex-col  items-center ">
+      <div className="w-full relative flex justify-between p-4 xl:p-16">
         <Link href="/" className="logo relative z-50">
           Logo
         </Link>

@@ -8,13 +8,14 @@ import { openSkills } from "../../../redux/skills";
 import { useDispatch } from "react-redux";
 import FooterButton from "../components/FooterButton";
 import PageTitle from "../components/PageTitle";
+import ParticlesContainer from "../components/Particles";
 
 type Props = {};
 
 const Page = (props: Props) => {
   const dispatch = useDispatch();
 
-  const subtitleClassName = "grid gap-2 mb-4";
+  const subtitleClassName = "grid gap-2 mb-4 text-justify";
   const subtitleTextClassName =
     "text-lg font-bold text-primaryBlue dark:text-primaryRed capitalize";
   const subtitleContentClassName = "text-gray-600 dark:text-gray-400";
@@ -31,15 +32,15 @@ const Page = (props: Props) => {
   return (
     <>
       <AnimatePresence>
-        <div className="flex flex-col items-center justify-center pt-24 pb-24 px-6 overflow-x-hidden">
+        <div className="flex flex-col items-center justify-center pt-24 xl:pt-36 pb-24 px-6 overflow-x-hidden">
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100vw", opacity: 0 }}
             transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-            className="grid xl:grid-cols-6 gap-6 xl:gap-12 max-w-7xl"
+            className="grid md:grid-cols-6 gap-6 max-w-7xl"
           >
-            <div className="rounded-xl xl:rounded-bl-[200px] shadow h-fit overflow-hidden col-span-2">
+            <div className="rounded-xl md:rounded-bl-[100px] shadow h-fit overflow-hidden col-span-2 xl:hidden">
               <Image
                 src={"/me-bg.jpg"}
                 alt={"clever dev frontend developer"}
@@ -48,7 +49,7 @@ const Page = (props: Props) => {
                 className="w-full object-center xl:max-h-[550px]"
               />
             </div>
-            <div className="flex flex-col gap-6 md:mt-8 xl:mt-0 h-fit xl:col-span-4">
+            <div className="flex flex-col gap-6 md:mt-0 h-fit md:col-span-4">
               <PageTitle title={"About"} />
               <div className="">
                 <Subtitle
@@ -97,6 +98,7 @@ const Page = (props: Props) => {
                     high-performance capabilities.
                   </p>
                 </div>
+                <ParticlesContainer />
                 <Subtitle
                   subtitle={"Commitment to Quality"}
                   content={
@@ -139,6 +141,15 @@ const Page = (props: Props) => {
           prevLink="/resume"
         />
       </AnimatePresence>
+      <div className=" xl:rounded-bl-[80px] shadow h-fit overflow-hidden xl:max-w-[400px] w-full fixed right-0 top-0 hidden xl:block about-image">
+        <Image
+          src={"/me-bg.jpg"}
+          alt={"clever dev frontend developer"}
+          height={500}
+          width={500}
+          className="about-image_img w-full object-center xl:max-h-[550px]"
+        />
+      </div>
     </>
   );
 };

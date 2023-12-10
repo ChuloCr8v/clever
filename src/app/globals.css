@@ -58,23 +58,6 @@ p.menu-item:hover {
   -webkit-text-stroke: 2px #06a8f7;
 }
 
-.header-stroke {
-  -webkit-text-stroke: 2px #000;
-  color: transparent;
-  font-size: 60px;
-}
-
-.skills-close-button {
-  color: transparent;
-  -webkit-text-stroke: 2px rgb(229, 231, 235);
-  transition: all 0.3s;
-}
-
-.skills-close-button:hover {
-  -webkit-text-stroke: 2px rgb(221, 38, 38, 0.1);
-  background: transparent;
-}
-
 #pointer {
   height: 20px;
   width: 20px;
@@ -97,5 +80,22 @@ p.menu-item:hover {
   }
   100% {
     background: transparent;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-image {
+    max-width: 4900px; /* Set the initial width of the image */
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    border-bottom-left-radius: 0 !important;
+    /* Optional: Add max-width to prevent the image from becoming too large on larger screens */
+  }
+
+  .about-image_img {
+    min-height: 100vh !important;
+    object-fit: cover;
+    height: 100%;
   }
 }
