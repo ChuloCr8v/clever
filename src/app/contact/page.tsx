@@ -122,7 +122,7 @@ const Contact = (props: Props) => {
                     Message Me
                   </p>
                   <p className=" mt-1 md:text-xl text-gray-500 dark:text-gray-400">
-                    Patiently waiting....
+                    Reach out to me via my inbox
                   </p>
                 </div>
                 <div className="w-full grid md:grid-cols-2 gap-4 md:mt-4">

@@ -69,7 +69,7 @@ const Page = (props: Props) => {
     <AnimatePresence>
       <div className="overflow-hidden">
         <motion.section
-          className="pt-24 pb-32 px-6 flex flex-col items-center xl:justify-center min-h-screen"
+          className="pt-24 xl:pt-40 pb-32 px-6 flex flex-col items-center xl:justify-center min-h-screen"
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100vw", opacity: 0 }}
@@ -86,14 +86,14 @@ const Page = (props: Props) => {
               />
             </div>
             <div className="w-full basis-full">
-              <div className="flex justify-between items-center md:mt-8 xl:mt-0">
+              <div className="flex justify-between items-center mt-4 md:mt-8 xl:mt-0">
                 {" "}
                 <PageTitle title={"Projects"} />
                 <span className="bg-gray-800 dark:bg-gray-300 text-gray-300 dark:text-gray-800 font-bold  md:text-2xl h-7 w-7 md:h-9 md:w-9 rounded flex items-center justify-center ml-4">
                   {projects.length}
                 </span>
               </div>
-              <div className="xl:mt-6">
+              <div className="mt-2">
                 {projects.map((d, index) => (
                   <div
                     onClick={() => toggleProjectDetails(d)}

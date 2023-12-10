@@ -34,15 +34,15 @@ const Nav = (props: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={twMerge(
-            "fixed left-0 top-0 h-screen w-screen bg-white flex flex-col justify-center overflow-hidden"
+            "fixed left-0 top-0 h-screen w-screen bg-white flex flex-col justify-center items-center overflow-hidden"
           )}
         >
-          <div className="flex flex-col items-start gap-4 pl-8">
+          <div className="flex flex-col items-start gap-4 pl-8 xl:pl-0 max-w-7xl w-full">
             {menu.map((m, index) => (
               <Link
                 key={index}
                 href={m.url}
-                className="text-5xl font-bold text-left overflow-hidden"
+                className="text-5xl xl:text-[80px] font-bold text-left overflow-hidden"
                 onClick={() => dispatch(closeMenu())}
               >
                 <motion.p
