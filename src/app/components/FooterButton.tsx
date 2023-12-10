@@ -31,7 +31,7 @@ const FooterButton = (props: Props) => {
   return (
     <div
       className={twMerge(
-        "fixed bottom-4 w-full px-4 translate-y-0 duration-300 flex justify-center items-center",
+        "fixed bottom-4 z-50 w-full px-4 translate-y-0 duration-300 flex justify-center items-center",
         !isVisible && "translate-y-[100vh]"
       )}
     >

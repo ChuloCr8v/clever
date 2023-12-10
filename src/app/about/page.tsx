@@ -141,7 +141,7 @@ const Page = (props: Props) => {
           prevLink="/resume"
         />
       </AnimatePresence>
-      <div className=" xl:rounded-bl-[80px] shadow h-fit overflow-hidden xl:max-w-[400px] w-full fixed right-0 top-0 hidden xl:block about-image">
+      <div className=" xl:rounded-bl-[80px] shadow h-fit overflow-hidden xl:max-w-[400px] w-full fixed right-0 top-0 z-40 hidden xl:block about-image">
         <Image
           src={"/me-bg.jpg"}
           alt={"clever dev frontend developer"}

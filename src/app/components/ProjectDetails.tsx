@@ -70,15 +70,11 @@ const ProjectDetails = () => {
     return (
       <div className="mt-12 xl:mt-16">
         <ImageTitle title={props.title} />
-        <div
-          className={twMerge(
-            "flex flex-col items-center gap-4 xl:gap-6 md:grid grid-cols-2"
-          )}
-        >
+        <div className={twMerge("flex flex-col items-center gap-4 xl:gap-6")}>
           {props.dataRef?.map((i: { src: string }, index) => (
             <div
               className={twMerge(
-                "rounded-lg overflow-hidden md:h-[200px] xl:h-[300px] w-full border dark:border-none shadow"
+                "rounded-lg overflow-hidden md:h-[200px] xl:h-[400px] w-full border dark:border-none shadow"
               )}
               key={index}
             >
@@ -101,11 +97,11 @@ const ProjectDetails = () => {
     <section
       onClick={() => dispatch(closeProjectDetails())}
       className={twMerge(
-        "fixed overflow-y-scroll min-h-screen left-0 top-0 h-screen w-full bg-white dark:bg-gray-800 -translate-x-full duration-200 py-24 px-4 flex flex-col items-center",
+        "fixed overflow-y-scroll min-h-screen left-0 top-0 h-screen w-full bg-white dark:bg-gray-800 -translate-x-full duration-200 py-24 xl:pt-48 px-4 flex flex-col items-center",
         isProjectDetailsOpen && "translate-x-0"
       )}
     >
-      <div className="max-w-7xl">
+      <div className="max-w-6xl">
         <div className="">
           <Image
             src={projectDetails.img}
@@ -118,21 +114,25 @@ const ProjectDetails = () => {
             <h2 className="font-bold text-2xl xl:text-4xl border-b dark:border-gray-200 border-gray-500 pb-2 ">
               {projectDetails.title}
             </h2>
-            <div className="flex flex-col gap-4 mt-6">
-              {[
-                { title: "Category", data: projectDetails.category },
-                { title: "Tools", data: projectDetails.tools },
-                { title: "Year", data: projectDetails.year },
-              ].map((d, index) => (
-                <DetailRow rowTitle={d.title} rowData={d.data} key={index} />
-              ))}
+            <div className="xl:flex items-center xl:gap-12 xl:mt-8">
+              <div className="flex flex-col gap-4 mt-6 xl:order-2 basis-full">
+                {[
+                  { title: "Category", data: projectDetails.category },
+                  { title: "Tools", data: projectDetails.tools },
+                  { title: "Year", data: projectDetails.year },
+                ].map((d, index) => (
+                  <DetailRow rowTitle={d.title} rowData={d.data} key={index} />
+                ))}
+              </div>
+              <div className="">
+                <p className="mt-8 xl:mt-0 text-lg md:text-xl font-semibold text-primaryBlue dark:text-primaryRed">
+                  About
+                </p>
+                <p className="md:text-xl xl:text-lg mt-2 mb-6 dark:text-gray-400 text-gray-500 text-justify">
+                  {projectDetails.description}
+                </p>
+              </div>
             </div>
-            <p className="mt-8 text-lg md:text-xl font-semibold text-primaryBlue dark:text-primaryRed">
-              About
-            </p>
-            <p className="md:text-xl xl:text-lg mt-2 mb-6 dark:text-gray-400 text-gray-500">
-              {projectDetails.description}
-            </p>
             <div className="flex gap-4">
               {[
                 { title: "Visit Project", data: projectDetails.url },

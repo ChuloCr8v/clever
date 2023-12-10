@@ -97,7 +97,7 @@ const Page = (props: Props) => {
                 {projects.map((d, index) => (
                   <div
                     onClick={() => toggleProjectDetails(d)}
-                    className="group dark:text-gray-400 md:text-xl xl:text-xl text-gray-500 hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 md:pt-8 xl:pt-5 xl:pb-2 flex justify-between items-center duration-200"
+                    className="group dark:text-gray-400 md:text-xl xl:text-xl text-gray-500 hover:text-primaryBlue dark:hover:text-primaryRed border-b border-gray-500 dark:hover:border-primaryRed hover:border-primaryBlue pt-4 md:pt-8 xl:pt-5 xl:pb-2 flex justify-between items-center duration-200 cursor-pointer"
                     key={index}
                   >
                     {d.title}
