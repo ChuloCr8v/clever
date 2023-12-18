@@ -73,7 +73,7 @@ const Contact = (props: Props) => {
           exit={{ x: "-100vw", opacity: 0 }}
           transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
         >
-          <div className="wrapper max-w-7xl xl:grid grid-cols-2 gap-24">
+          <div className="wrapper max-w-7xl w-full xl:grid grid-cols-2 gap-24">
             <div className="">
               <PageTitle title={"Contact"} />
               <div className="flex flex-col gap-6 mt-12 w-full">

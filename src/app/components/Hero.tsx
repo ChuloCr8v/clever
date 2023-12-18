@@ -12,7 +12,7 @@ const Hero = (props: Props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
+    <div className="flex flex-col justify-center items-center min-h-screen ">
       <div className="container text-center flex flex-col items-center">
         <p className="text-base md:text-2xl stroke">
           Hey, <span className="">I&rsquo;m</span>

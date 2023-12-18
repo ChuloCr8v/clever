@@ -115,7 +115,7 @@ const ProjectDetails = () => {
               {projectDetails.title}
             </h2>
             <div className="xl:flex items-center xl:gap-12 xl:mt-8">
-              <div className="flex flex-col gap-4 mt-6 xl:order-2 basis-full">
+              <div className="flex flex-col gap-4 mt-6 xl:mt-0 xl:order-2 basis-full">
                 {[
                   { title: "Category", data: projectDetails.category },
                   { title: "Tools", data: projectDetails.tools },

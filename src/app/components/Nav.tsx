@@ -34,7 +34,7 @@ const Nav = (props: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={twMerge(
-            "fixed left-0 top-0 h-screen w-screen bg-white flex flex-col justify-center items-center overflow-hidden"
+            "fixed left-0 top-0 h-screen w-screen bg-white dark:bg-gray-800 flex flex-col justify-center items-center overflow-hidden"
           )}
         >
           <div className="flex flex-col items-start gap-4 pl-8 xl:pl-0 max-w-7xl w-full">
@@ -54,6 +54,7 @@ const Nav = (props: Props) => {
                   }}
                   className="duration-200"
                 >
+                  {m.icon}
                   {m.title}
                 </motion.p>
               </Link>
