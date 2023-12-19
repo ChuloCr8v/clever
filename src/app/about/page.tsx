@@ -134,11 +134,11 @@ const Page = (props: Props) => {
           </motion.div>
         </div>
         <FooterButton
-          prevTitle={"My Resume"}
+          prevTitle={"Home"}
           nextTitle={"Projects"}
           icon={false}
           nextLink="/projects"
-          prevLink="/resume"
+          prevLink="/"
         />
       </AnimatePresence>
       <div className=" xl:rounded-bl-[80px] shadow h-fit overflow-hidden xl:max-w-[400px] w-full fixed right-0 top-0 z-40 hidden xl:block about-image">

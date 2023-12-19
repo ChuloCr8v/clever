@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../../../redux/menu";
 import Link from "next/link";
 import ThemeSwitch from "../components/ThemeSwtich";
+import Hamburger from "hamburger-react";
 
 type Props = {};
 
@@ -25,14 +26,20 @@ const Header = (props: Props) => {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full duration-200 flex flex-col  items-center ">
-      <div className="w-full relative flex justify-between p-4 xl:p-16">
-        <Link href="/" className="logo relative z-50">
-          Logo
+      <div className="w-full relative flex justify-between items-center p-4 xl:p-16 xl:pb-4">
+        <Link href="/" className="logo z-50 group">
+          <div className="xl:h-56 xl:w-56 rounded-full border-[28px] dark:border-white border-gray-500 absolute -left-16 -top-32 group-hover:border-[150px] duration-200 -z-10"></div>
+          <img
+            src="/logo.png"
+            alt="nkematu bonaventure"
+            className="h-12 w-auto"
+          />
         </Link>
         <ThemeSwitch />
-        <button onClick={toggleMenu} className="relative z-30">
-          Menu
-        </button>
+        <div className="relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed">
+          {" "}
+          <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />
+        </div>
       </div>
       <Nav isOpen={isMenuOpen} />
     </header>
