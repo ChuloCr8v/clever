@@ -22,10 +22,11 @@ body {
 
 body {
   transition: 0.3s;
-  background-image: url("/bg.jpg");
+  /* background-image: url("/bg-white.png");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
+/*
 body::after {
   content: "";
   position: fixed;
@@ -36,7 +37,7 @@ body::after {
   width: 100vw;
   z-index: -20;
   opacity: 0.7;
-}
+} */
 
 * {
   margin: 0;

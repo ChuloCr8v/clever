@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../../../redux/menu";
 import Link from "next/link";
+import ThemeSwitch from "../components/ThemeSwtich";
 import Hamburger from "hamburger-react";
 
 type Props = {};
@@ -34,7 +35,7 @@ const Header = (props: Props) => {
             className="h-12 w-auto"
           />
         </Link>
-        {/* <ThemeSwitch /> */}
+        <ThemeSwitch />
         <div className="relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group">
           {" "}
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />{" "}
