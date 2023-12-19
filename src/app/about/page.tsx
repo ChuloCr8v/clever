@@ -40,12 +40,10 @@ const Page = (props: Props) => {
             transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
             className="grid md:grid-cols-6 gap-6 max-w-7xl"
           >
-            <div className="rounded-xl md:rounded-bl-[100px] shadow h-fit overflow-hidden col-span-2 xl:hidden">
-              <Image
+            <div className="rounded-xl md:rounded-bl-[100px] shadow h-fit overflow-hidden md:col-span-2 xl:hidden">
+              <img
                 src={"/me-bg.jpg"}
                 alt={"clever dev frontend developer"}
-                height={500}
-                width={500}
                 className="w-full object-center xl:max-h-[550px]"
               />
             </div>

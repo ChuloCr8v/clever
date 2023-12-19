@@ -28,7 +28,7 @@ const Header = (props: Props) => {
     <header className="fixed left-0 top-0 z-50 w-full duration-200 flex flex-col  items-center ">
       <div className="w-full relative flex justify-between items-center p-4 xl:p-16 xl:pb-4">
         <Link href="/" className="logo z-50 group">
-          <div className="xl:h-56 xl:w-56 rounded-full border-[28px] dark:border-white border-gray-500 absolute -left-16 -top-32 group-hover:border-[150px] duration-200 -z-10"></div>
+          <div className="xl:h-56 xl:w-56 rounded-full border-[28px] dark:border-white border-gray-200 absolute -left-16 -top-32 group-hover:border-[150px] duration-200 -z-10"></div>
           <img
             src="/logo.png"
             alt="nkematu bonaventure"
