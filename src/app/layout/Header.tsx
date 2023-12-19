@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, openMenu } from "../../../redux/menu";
 import Link from "next/link";
-import ThemeSwitch from "../components/ThemeSwtich";
 import Hamburger from "hamburger-react";
 
 type Props = {};
