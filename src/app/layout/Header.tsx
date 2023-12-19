@@ -35,7 +35,7 @@ const Header = (props: Props) => {
             className="h-12 w-auto"
           />
         </Link>
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
         <div className="relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group">
           {" "}
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />{" "}

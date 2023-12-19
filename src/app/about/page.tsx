@@ -121,11 +121,12 @@ const Page = (props: Props) => {
                 <Button
                   title={"Skills/Tools"}
                   onclick={() => dispatch(openSkills())}
-                  className="w-fit px-2"
+                  className="w-fit px-4"
                 />
                 <Button
                   title={"My Github"}
                   link="https://github.com/chulocr8v"
+                  className="px-4"
                 />{" "}
               </div>
             </div>

@@ -6,12 +6,14 @@ import { FaBriefcase, FaHeadphonesAlt, FaHome, FaUser } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 import { closeMenu } from "../../../redux/menu";
 import { useDispatch } from "react-redux";
+import { usePathname } from "next/navigation";
 
 type Props = { isOpen: boolean };
 
 const Nav = (props: Props) => {
   const dispatch = useDispatch();
-
+  const currentRoute = usePathname();
+  console.log(currentRoute);
   const menu = [
     { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
     { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
@@ -52,7 +54,11 @@ const Nav = (props: Props) => {
                     duration: 0.4,
                     delay: 0,
                   }}
-                  className="duration-200"
+                  className={twMerge(
+                    "duration-200",
+                    currentRoute.includes(m.title.toLowerCase()) &&
+                      "text-primaryBlue dark:text-primaryRed"
+                  )}
                 >
                   {m.icon}
                   {m.title}

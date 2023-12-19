@@ -114,7 +114,7 @@ const ProjectDetails = () => {
             <h2 className="font-bold text-2xl xl:text-4xl border-b dark:border-gray-200 border-gray-500 pb-2 ">
               {projectDetails.title}
             </h2>
-            <div className="xl:flex items-center xl:gap-12 xl:mt-8">
+            <div className="xl:flex items-start xl:gap-12 xl:mt-8">
               <div className="flex flex-col gap-4 mt-6 xl:mt-0 xl:order-2 basis-full">
                 {[
                   { title: "Category", data: projectDetails.category },
