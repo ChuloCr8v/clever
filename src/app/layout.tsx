@@ -8,7 +8,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Providers } from "../../redux/Providers";
 import { persistor } from "../../redux/store";
 import ThemeProvider from "./provider";
-// import ThemeSwitch from "./components/ThemeSwtich";
 import { twMerge } from "tailwind-merge";
 const inter = Inter({ subsets: ["latin"] });
 
