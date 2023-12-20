@@ -39,12 +39,12 @@ const Nav = (props: Props) => {
             "fixed left-0 top-0 h-screen w-screen bg-white dark:bg-gray-800 flex flex-col justify-center items-center overflow-hidden"
           )}
         >
-          <div className="flex flex-col items-start gap-4 pl-8 xl:pl-0 max-w-7xl w-full">
+          <div className="flex flex-col items-start gap-4 xl:gap-8 pl-8 xl:pl-0 max-w-7xl w-full">
             {menu.map((m, index) => (
               <Link
                 key={index}
                 href={m.url}
-                className="text-5xl xl:text-[60px] font-bold text-left overflow-hidden dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
+                className="text-5xl xl:text-[80px] font-bold text-left overflow-hidden dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
                 onClick={() => dispatch(closeMenu())}
               >
                 <motion.p

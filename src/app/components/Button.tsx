@@ -38,10 +38,11 @@ const Button = (props: Props) => {
         <button
           onClick={props.onclick}
           className={twMerge(
-            "bg-gray-700 hover:bg-gray-800 duration-200 text-white font-semibold w-[130px] py-2 xl:py-1 rounded text-sm flex items-center justify-center gap-2 md:text-xl xl:text-base",
+            "group bg-gray-700 hover:bg-gray-800 duration-200 text-white font-semibold w-[130px] py-2 xl:py-1 rounded text-sm flex items-center justify-center gap-2 md:text-xl xl:text-base",
             props.className
           )}
         >
+          <div className="h-12"></div>
           {props.title}
           {props?.icon ? (
             props.icon
