@@ -5,6 +5,8 @@ import { openSkills } from "../../../redux/skills";
 import { stacks } from "../data";
 import Button from "./Button";
 import FooterButton from "./FooterButton";
+import Cv from "./Cv";
+import { openCv } from "../../../redux/cv";
 
 type Props = {};
 
@@ -35,20 +37,28 @@ const Hero = (props: Props) => {
             </div>
           ))}
         </div>{" "}
-        <Button
-          onclick={() => dispatch(openSkills())}
-          title={"More"}
-          className={
-            "bg-gray-200 dark:bg-gray-700 font-semibold dark:text-gray-300 text-gray-500 hover:text-gray-200 hover:bg-gray-700 px-4 w-fit place-self-center mt-6"
-          }
-        />
+        <div className="flex items-center gap-4 mt-12">
+          {" "}
+          <Button
+            prevBtn
+            onclick={() => dispatch(openCv())}
+            title={"My Resume"}
+            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-400 font-normal"
+          />
+          <Button
+            onclick={() => dispatch(openSkills())}
+            title={"More Skills"}
+            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-400 font-normal"
+          />
+        </div>
         <FooterButton
+          prevExternal
           prevTitle={"My Resume"}
           nextTitle={"About Me"}
-          icon={false}
           nextLink="/about"
-          prevLink="/resume"
+          prevLink="https://drive.google.com/file/d/1Q3lzQXxLMaa1sTxISBE8MwPYa7AGFuSr/view?usp=sharing"
         />
+        <Cv />
       </div>
     </div>
   );

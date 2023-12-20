@@ -5,6 +5,7 @@ import storage from "redux-persist/lib/storage";
 import menu from "./menu";
 import skills from "./skills";
 import projectDetails from "./projectDetails";
+import cv from "./cv";
 
 const persistConfig = {
   key: "root",
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   menu,
   skills,
   projectDetails,
+  cv,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -124,3 +124,7 @@ p.menu-item:hover {
     position: relative;
   }
 }
+
+:where(.css-dev-only-do-not-override-2q8sxy).ant-btn-primary {
+  background: #1677ff !important;
+}
