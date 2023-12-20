@@ -179,7 +179,8 @@ const Contact = (props: Props) => {
         prevTitle={"Projects"}
         nextTitle={"Resume"}
         icon={false}
-        nextLink="/resume"
+        nextLink="https://drive.google.com/file/d/1Q3lzQXxLMaa1sTxISBE8MwPYa7AGFuSr/view?usp=sharing"
+        nextExternal
         prevLink="/projects"
       />
     </AnimatePresence>

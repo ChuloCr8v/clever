@@ -26,7 +26,10 @@ const Button = (props: Props) => {
             props.className
           )}
         >
-          <span className={twMerge(props.prevBtn && "order-2")}>
+          <span
+            onClick={props.onclick}
+            className={twMerge(props.prevBtn && "order-2")}
+          >
             {props.title}
           </span>
 

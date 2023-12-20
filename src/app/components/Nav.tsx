@@ -13,13 +13,12 @@ type Props = { isOpen: boolean };
 const Nav = (props: Props) => {
   const dispatch = useDispatch();
   const currentRoute = usePathname();
-  console.log(currentRoute);
   const menu = [
     { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
     { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
     {
-      title: "Portfolio",
-      url: "/portfolio",
+      title: "Projects",
+      url: "/projects",
       icon: <FaBriefcase className="text-[16px]" />,
     },
     {

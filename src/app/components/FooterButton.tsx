@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Button from "./Button";
 import { twMerge } from "tailwind-merge";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../../../redux/menu";
 
 type Props = {
   nextExternal?: boolean;
@@ -15,6 +17,8 @@ type Props = {
 const FooterButton = (props: Props) => {
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const dispatch = useDispatch();
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY;
@@ -45,6 +49,7 @@ const FooterButton = (props: Props) => {
           icon={props.icon}
           prevBtn
           className="px-4 py-3 xl:py-1 hover:bg-gray-800 text-sm md:bg-gray-700"
+          onclick={() => dispatch(closeMenu())}
         />
         <Button
           external={props.nextExternal}
@@ -52,6 +57,7 @@ const FooterButton = (props: Props) => {
           link={props.nextLink}
           icon={props.icon}
           className="px-4 py-3 xl:py-1 hover:bg-gray-800 text-sm md:bg-gray-700"
+          onclick={() => dispatch(closeMenu())}
         />
       </div>
     </div>
