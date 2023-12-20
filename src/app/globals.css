@@ -22,9 +22,21 @@ body {
 
 body {
   transition: 0.3s;
-  /* background-image: url("/bg-white.png");
-  background-size: cover;
+  /* background-image: url("/bg.png");
+  background-size: contain;
   background-position: center; */
+}
+
+body:before {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  content: url("/bg.png");
+  opacity: 0.2;
+  max-height: 100vh;
+  overflow: hidden;
+  filter: blur(5px);
 }
 /*
 body::after {
