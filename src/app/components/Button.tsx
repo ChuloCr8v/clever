@@ -22,7 +22,7 @@ const Button = (props: Props) => {
           rel="noopener noreferrer"
           href={props.link}
           className={twMerge(
-            "flex items-center gap-2 py-2 xl:py-1 hover:border-gray-700 border-transparent border rounded leading-none duration-200 md:text-xl xl:text-base",
+            "flex items-center gap-2 py-1 hover:border-gray-700 border-transparent border rounded leading-none duration-200 md:text-base",
             props.className
           )}
         >
@@ -44,7 +44,7 @@ const Button = (props: Props) => {
         <button
           onClick={props.onclick}
           className={twMerge(
-            "group bg-gray-700 hover:bg-gray-800 duration-200 text-white font-semibold w-[130px] py-2 xl:py-1 rounded text-sm flex items-center justify-center gap-2 md:text-xl xl:text-base",
+            "group bg-gray-700 hover:bg-gray-800 duration-200 text-white font-semibold w-[130px] py-1 rounded text-sm flex items-center justify-center gap-2 md:text-base",
             props.className
           )}
         >
