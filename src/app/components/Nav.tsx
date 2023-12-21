@@ -45,7 +45,7 @@ const Nav = (props: Props) => {
               <Link
                 key={index}
                 href={m.url}
-                className="text-5xl xl:text-[80px] font-bold text-left overflow-hidden dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
+                className="text-5xl xl:text-[70px] font-bold text-left overflow-hidden dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
                 onClick={() => dispatch(closeMenu())}
               >
                 <motion.p
