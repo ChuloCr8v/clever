@@ -27,6 +27,8 @@ const Nav = (props: Props) => {
       icon: <FaHeadphonesAlt className="text-[16px]" />,
     },
   ];
+
+  console.log(currentRoute);
   return (
     <>
       {props.isOpen && (
@@ -56,7 +58,11 @@ const Nav = (props: Props) => {
                   className={twMerge(
                     "duration-200",
                     currentRoute.includes(m.title.toLowerCase()) &&
-                      "text-primaryBlue dark:text-primaryRed"
+                      "text-primaryBlue dark:text-primaryRed",
+                    currentRoute === "/" &&
+                      m.title.toLowerCase().includes("home")
+                      ? "text-primaryBlue dark:text-primaryRed"
+                      : ""
                   )}
                 >
                   {m.icon}
