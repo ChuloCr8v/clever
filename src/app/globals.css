@@ -27,16 +27,21 @@ body {
   background-position: center; */
 }
 
-body:before {
+body:before,
+.skills-section:before {
   z-index: -1;
   position: fixed;
   left: 0;
   top: 0;
   content: url("/bg.png");
-  opacity: 0.2;
+  opacity: 1;
   max-height: 100vh;
   overflow: hidden;
-  filter: blur(5px);
+}
+
+body:before,
+.skills-section:before {
+  @apply dark:opacity-[0.04];
 }
 /*
 body::after {
@@ -140,3 +145,7 @@ p.menu-item:hover {
 :where(.css-dev-only-do-not-override-2q8sxy).ant-btn-primary {
   background: #1677ff !important;
 }
+/* 
+.header-stroke {
+  @apply;
+} */

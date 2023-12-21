@@ -31,7 +31,7 @@ const Hero = (props: Props) => {
         <div className="stacks flex flex-wrap justify-center items-center gap-2 mt-4 px-4">
           {stacks.map((s, index) => (
             <div className="border-r border-gray-500 pr-2 stack" key={index}>
-              <p className="text-base md:text-2xl  leading-none lowercase dark:text-gray-400 text-gray-500">
+              <p className="text-base md:text-2xl leading-none lowercase dark:text-gray-400 text-gray-500">
                 {s.stack}
               </p>
             </div>
@@ -43,12 +43,12 @@ const Hero = (props: Props) => {
             prevBtn
             onclick={() => dispatch(openCv())}
             title={"My Resume"}
-            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-400 font-normal"
+            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
           />
           <Button
             onclick={() => dispatch(openSkills())}
             title={"More Skills"}
-            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-400 font-normal"
+            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
           />
         </div>
         <FooterButton
