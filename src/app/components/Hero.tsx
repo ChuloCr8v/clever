@@ -43,12 +43,12 @@ const Hero = (props: Props) => {
             prevBtn
             onclick={() => dispatch(openCv())}
             title={"My Resume"}
-            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
+            className="border-[1.5px] py-2 md:py-1 border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
           />
           <Button
             onclick={() => dispatch(openSkills())}
             title={"More Skills"}
-            className="border-[1.5px] border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
+            className="border-[1.5px] py-2 md:py-1 border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
           />
         </div>
         <FooterButton
