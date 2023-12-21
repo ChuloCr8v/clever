@@ -7,6 +7,7 @@ import { closeMenu, openMenu } from "../../../redux/menu";
 import Link from "next/link";
 import ThemeSwitch from "../components/ThemeSwtich";
 import Hamburger from "hamburger-react";
+import { twMerge } from "tailwind-merge";
 
 type Props = {};
 
@@ -39,7 +40,12 @@ const Header = (props: Props) => {
         <div className="relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group">
           {" "}
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />{" "}
-          <div className="-translate-y-full group-hover:translate-y-0 h-56 group-hover:w-10 rounded-b-full border-[42px] dark:border-white border-gray-200 absolute -right-5 -top-32  duration-200 -z-10"></div>
+          <div
+            className={twMerge(
+              "-translate-y-full group-hover:translate-y-0 h-56 group-hover:w-10 rounded-b-full border-[42px] dark:border-white border-gray-200 absolute -right-5 -top-32  duration-200 -z-10",
+              isMenuOpen && "translate-y-0"
+            )}
+          ></div>
         </div>
       </div>
       <Nav isOpen={isMenuOpen} />
