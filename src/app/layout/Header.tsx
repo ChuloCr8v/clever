@@ -37,7 +37,12 @@ const Header = (props: Props) => {
           />
         </Link>
         <ThemeSwitch />
-        <div className="relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group">
+        <div
+          className={twMerge(
+            "relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group",
+            isMenuOpen && "dark:text-gray-800"
+          )}
+        >
           {" "}
           <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />{" "}
           <div
