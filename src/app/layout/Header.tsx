@@ -40,7 +40,7 @@ const Header = (props: Props) => {
         <div
           className={twMerge(
             "relative z-20 hover:text-primaryBlue dark:hover:text-primaryRed group",
-            isMenuOpen && "dark:text-gray-800"
+            isMenuOpen && "dark:text-primaryRed text-primaryBlue"
           )}
         >
           {" "}
