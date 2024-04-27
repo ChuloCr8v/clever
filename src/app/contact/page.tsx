@@ -28,11 +28,15 @@ const Contact = (props: Props) => {
         </p>
       ),
       subMenu: [
-        { url: "chulocr8v@gmail.com", title: "Facebook" },
-        { url: "chulocr8v@gmail.com", title: "Instagram" },
-        { url: "chulocr8v@gmail.com", title: "Twitter" },
-        { url: "chulocr8v@gmail.com", title: "LinkedIn" },
-        { url: "chulocr8v@gmail.com", title: "whatsapp" },
+        {
+          url: "https://x.com/chulocr8v",
+          title: "Twitter",
+        },
+        {
+          url: "www.linkedin.com/in/bonaventure-nkematu-77b563148",
+          title: "LinkedIn",
+        },
+        { url: "https://wa.me/+2348138369977", title: "whatsapp" },
       ],
     },
   ];
@@ -98,6 +102,8 @@ const Contact = (props: Props) => {
                             href={s.url}
                             className="flex items-center gap-2 group hover:text-primaryBlue dark:hover:text-primaryRed pl-16 md:text-xl"
                             key={index}
+                            referrerPolicy="no-referrer"
+                            target="_blank"
                           >
                             <FaArrowRight className="-rotate-45 group-hover:rotate-0 duration-200" />
                             {s.title}
