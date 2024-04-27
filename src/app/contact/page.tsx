@@ -178,17 +178,19 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                     />
-                    <div className="absolute right-0">
-                      {emailIsValid(formData.email) ? (
-                        <p className="flex items-center gap-2 text-base justify-end text-green-600 font-semibold mt-2">
-                          <FaCheckCircle /> Valid Email Address.
-                        </p>
-                      ) : (
-                        <p className="flex items-center gap-2 text-base justify-end text-red-600 dark:text-yellow-600 font-semibold mt-2">
-                          <FaBan /> Invalid Email Address!
-                        </p>
-                      )}
-                    </div>
+                    {formData.email !== "" && (
+                      <div className="absolute right-0">
+                        {emailIsValid(formData.email) ? (
+                          <p className="flex items-center gap-2 text-sm justify-end text-green-600 font-semibold mt-2">
+                            <FaCheckCircle /> Valid Email Address.
+                          </p>
+                        ) : (
+                          <p className="flex items-center gap-2 text-sm justify-end text-red-600 dark:text-yellow-600 font-semibold mt-2">
+                            <FaBan /> Invalid Email Address!
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </div>
                   <FormGroup
                     label={"Subject"}
@@ -229,7 +231,7 @@ const Contact = () => {
                   disabled={disabled || isLoading}
                   onClick={handleSendMail}
                   className={twMerge(
-                    "place-self-end md:text-xl md:mt-4 bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2",
+                    "place-self-end md:text-xl mt-4 md:mt-4 bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2",
                     (disabled || isLoading) &&
                       "dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300 dark:opacity-30"
                   )}
