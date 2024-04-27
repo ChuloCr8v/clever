@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import Hero from "./components/Hero";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
   // const pointer = document.getElementById("pointer");

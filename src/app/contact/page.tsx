@@ -1,23 +1,41 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaBan, FaCheckCircle } from "react-icons/fa";
 import FooterButton from "../components/FooterButton";
 import PageTitle from "../components/PageTitle";
-import Button from "../components/Button";
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { Button, message } from "antd";
+import emailjs from "@emailjs/browser";
 
-type Props = {};
+const inputClassName =
+  "md:text-xl bg-transparent border dark:border-gray-500 border-gray-400 rounded w-full px-3 py-2 outline-none hover:outline-blue-200 dark:hover:outline-primaryRed hover:border-primaryBlue dark:hover:border-primaryRed duration-200";
+const formGroupClassName = "flex flex-col items-start gap-2 md:gap-4 w-full";
+const labelClassName = "capitalize font-semibold md:text-xl";
 
-const Contact = (props: Props) => {
-  const [name, setName] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+type formDataProps = {
+  name: string;
+  email: string;
+  subject: string;
+  mail: string;
+  message: string;
+};
+
+const Contact = () => {
+  const [formData, setFormData] = useState<formDataProps>({
+    name: "",
+    mail: "",
+    email: "",
+    message: "",
+    subject: "",
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const contacts = [
     {
       title: "Mail",
+      id: 1,
       url: "chulocr8v@gmail.com",
       name: "chulocr8v",
     },
@@ -27,6 +45,7 @@ const Contact = (props: Props) => {
           Social<span className="block text-2xl md:text-4xl">Medias</span>
         </p>
       ),
+      id: 2,
       subMenu: [
         {
           url: "https://x.com/chulocr8v",
@@ -41,31 +60,49 @@ const Contact = (props: Props) => {
     },
   ];
 
-  const inputClassName =
-    "md:text-xl bg-transparent border dark:border-gray-500 border-gray-400 rounded w-full px-3 py-2 outline-none hover:outline-blue-200 dark:hover:outline-primaryRed hover:border-primaryBlue dark:hover:border-primaryRed duration-200";
-  const formGroupClassName = "flex flex-col items-start gap-2 md:gap-4 w-full";
-  const labelClassName = "capitalize font-semibold md:text-xl";
+  useEffect(() => {
+    emailjs.init("Ydvd-cirhqFpWFG-U");
+  }, []);
 
-  const FormGroup = (props: {
-    label: string;
-    placeholder: string;
-    type: string;
-    handleChange: ChangeEventHandler<HTMLInputElement>;
-  }) => {
-    return (
-      <div className={formGroupClassName}>
-        <label className={labelClassName}>{props.label}</label>
-        <input
-          type={props.type}
-          placeholder={props.placeholder}
-          className={inputClassName}
-          onChange={() => props.handleChange}
-        />
-      </div>
-    );
+  const emailIsValid = (email: string) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
   };
 
-  const mailtoLink = `mailto:${"chulocr8v@gmail.com"}?subject=${subject}&body=${message}`;
+  const handleSendMail = async () => {
+    setIsLoading(true);
+    try {
+      await emailjs.send("service_c02ype3", "template_sy9xbpx", {
+        from_name: formData.name,
+        to_name: "Nkematu Bonaventure",
+        subject: formData.subject,
+        mail: formData.mail,
+        reply_to: formData.email,
+      });
+      message.success("Mail sent successfully");
+      formData.name = "";
+      formData.email = "";
+      formData.subject = "";
+      formData.mail = "";
+    } catch (error) {
+      console.log(error);
+      message.error("Unable to send mail! Please try again.");
+    }
+    setIsLoading(false);
+  };
+
+  const handleInputChange = (e: {
+    target: { value: string; name: string };
+  }) => {
+    const { value, name } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const disabled =
+    formData.name === "" ||
+    formData.email === "" ||
+    formData.mail === "" ||
+    !emailIsValid(formData.email);
 
   return (
     <AnimatePresence>
@@ -81,8 +118,8 @@ const Contact = (props: Props) => {
             <div className="">
               <PageTitle title={"Contact"} />
               <div className="flex flex-col gap-6 mt-12 w-full">
-                {contacts.map((c, index) => (
-                  <div className="grid grid-cols-2" key={index}>
+                {contacts.map((c) => (
+                  <div className="grid grid-cols-2" key={c.id}>
                     <p className="font-semibold text-xl md:text-2xl">
                       {" "}
                       {c.title}
@@ -102,7 +139,6 @@ const Contact = (props: Props) => {
                             href={s.url}
                             className="flex items-center gap-2 group hover:text-primaryBlue dark:hover:text-primaryRed pl-16 md:text-xl"
                             key={index}
-                            referrerPolicy="no-referrer"
                             target="_blank"
                           >
                             <FaArrowRight className="-rotate-45 group-hover:rotate-0 duration-200" />
@@ -116,66 +152,93 @@ const Contact = (props: Props) => {
               </div>
             </div>
             <div className="form mt-24 xl:mt-0 pb-12">
-              <form
-                action={"/"}
-                name="contact clever"
-                method="POST"
-                data-netlify="true"
-                className="flex flex-col items-start gap-4 md:gap-6 w-full"
-              >
+              <form className="flex flex-col items-start gap-4 md:gap-8 w-full">
                 <div className="text-center w-full py-12 border dark:border-gray-500 border-gray-400 rounded">
-                  <p className="text-3xl md:text-4xl font-semibold">
-                    Message Me
-                  </p>
+                  <p className="text-3xl md:text-4xl font-semibold">Mail Me</p>
                   <p className=" mt-1 md:text-xl text-gray-500 dark:text-gray-400">
                     Reach out to me via my inbox
                   </p>
                 </div>
-                <div className="w-full grid md:grid-cols-2 gap-4 md:mt-4">
+                <div className="w-full space-y-6 md:space-y-0 md:grid md:grid-cols-2 gap-4 md:gap-y-8 mt-4">
                   {" "}
                   <FormGroup
                     label={"name"}
                     placeholder={"Enter name here"}
                     type={"text"}
-                    handleChange={(e) => setName(e.target.value)}
+                    handleChange={handleInputChange}
+                    name="name"
+                    value={formData.name}
                   />
+                  <div className="relative">
+                    <FormGroup
+                      label={"email"}
+                      placeholder={"Enter your email address"}
+                      type={"text"}
+                      handleChange={handleInputChange}
+                      name="email"
+                      value={formData.email}
+                    />
+                    <div className="absolute right-0">
+                      {emailIsValid(formData.email) ? (
+                        <p className="flex items-center gap-2 text-base justify-end text-green-600 font-semibold mt-2">
+                          <FaCheckCircle /> Valid Email Address.
+                        </p>
+                      ) : (
+                        <p className="flex items-center gap-2 text-base justify-end text-red-600 dark:text-yellow-600 font-semibold mt-2">
+                          <FaBan /> Invalid Email Address!
+                        </p>
+                      )}
+                    </div>
+                  </div>
                   <FormGroup
                     label={"Subject"}
                     placeholder={"Enter subject here"}
                     type={"text"}
-                    handleChange={(e) => setSubject(e.target.value)}
+                    handleChange={handleInputChange}
+                    name="subject"
+                    value={formData.subject}
                   />
                 </div>
 
                 <div className={formGroupClassName}>
                   <label
-                    htmlFor=""
-                    className={labelClassName}
-                    data-type="hidden"
+                    className={twMerge(
+                      labelClassName,
+                      "flex items-center gap-1"
+                    )}
                   >
-                    Message
+                    mail
+                    <span className="text-yellow-600">*</span>
                   </label>
                   <textarea
+                    name={"mail"}
                     className={inputClassName}
-                    placeholder="Write me a message"
+                    placeholder="Write me a mail"
                     rows={6}
-                    data-name={"message"}
-                    data-type={"hidden"}
-                    onChange={(e) => {
-                      setMessage(e.target.value);
-                      console.log(message);
-                    }}
+                    onChange={handleInputChange}
+                    value={formData.mail}
                   />
                 </div>
-                <a
-                  href={mailtoLink}
-                  className="md:text-xl md:mt-6 bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2"
+                <p className="md:-mt-5 text-sm place-self-end dark:text-yellow-600 text-red-600">
+                  <span className="font-bold">Note:</span> (
+                  <span className="font-bold text-xl leading-none">*</span>)
+                  indicates required information.
+                </p>
+                <Button
+                  loading={isLoading}
+                  disabled={disabled || isLoading}
+                  onClick={handleSendMail}
+                  className={twMerge(
+                    "place-self-end md:text-xl md:mt-4 bg-gray-700 hover:bg-black duration-200 text-white font-semibold w-[130px] py-2 rounded text-sm flex items-center justify-center gap-2",
+                    (disabled || isLoading) &&
+                      "dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300 dark:opacity-30"
+                  )}
                 >
                   Send{" "}
                   <FaArrowRight
                     className={twMerge("text-sm leading-none h-3")}
                   />
-                </a>
+                </Button>
               </form>
             </div>
           </div>
@@ -195,39 +258,35 @@ const Contact = (props: Props) => {
 
 export default Contact;
 
-//   <AnimatePresence>
-//     <div className="overflow-hidden">
-//       <motion.section
-//         className="pt-24 pb-32 px-6"
-//         initial={{ x: "100vw", opacity: 0 }}
-//         animate={{ x: 0, opacity: 1 }}
-//         exit={{ x: "-100vw", opacity: 0 }}
-//         transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-//       >
-//         <PageTitle title={"Contact"} />
-//         <div className="">
-//           {contacts.map((c, index) => (
-//             <div className="" key={index}>
-//               <p className="">{c.title}</p>
-//               {!c.subMenu ? (
-//                 <ContactComponent data={c} />
-//               ) : (
-//                 c?.subMenu?.map((s, index) => (
-//                   <div className="" key={index}>
-//                     <ContactComponent data={s} />
-//                   </div>
-//                 ))
-//               )}
-//             </div>
-//           ))}
-//         </div>
-//       </motion.section>
-//     </div>
-//     <FooterButton
-//       prevTitle={"About Me"}
-//       nextTitle={"Contact"}
-//       icon={false}
-//       nextLink="/contact"
-//       prevLink="/about"
-//     />
-//   </AnimatePresence>;
+const FormGroup = (props: {
+  label: string;
+  value: string;
+  name: string;
+  placeholder: string;
+  type: string;
+  handleChange: ChangeEventHandler<HTMLInputElement>;
+}) => {
+  return (
+    <div
+      className={twMerge(
+        formGroupClassName,
+        props.name === "subject" && "col-span-2"
+      )}
+    >
+      <label className={labelClassName}>
+        {props.label}{" "}
+        {props.name !== "subject" && (
+          <span className="dark:text-yellow-600 text-red-600">*</span>
+        )}
+      </label>
+      <input
+        value={props.value}
+        type={props.type}
+        placeholder={props.placeholder}
+        className={inputClassName}
+        onChange={props.handleChange}
+        name={props.name}
+      />
+    </div>
+  );
+};
