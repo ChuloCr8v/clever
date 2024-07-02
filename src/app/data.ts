@@ -181,6 +181,43 @@ export const projects = [
       },
     ],
   },
+  // {
+  //   title: "SugBox",
+  //   description:
+  //     "A full stack(MERN) digital suggestion box with portals for admin and employee. features include anonymous suggestions, attachment uploads, upvotes, downvotes, comments, etc.",
+  //   img: "/projects/sugbox.png",
+  //   url: "www.sugbox.vercel.app",
+  //   year: "2023",
+  //   category: "Full stack Web App",
+  //   tools:
+  //     "HTML, CSS, React, Typescript, AntD, TailwindCss, Node.js, Express.js, MongoDB, redux-toolkit, rtk query, etc.",
+  //   projectImages: [
+  //     {
+  //       title: "Home Page",
+  //       images: [
+  //         { src: "/projects/lachiommy/lachiommy.png" },
+  //         { src: "/projects/lachiommy/home.png" },
+  //         { src: "/projects/lachiommy/home-2.png" },
+  //         { src: "/projects/lachiommy/home-3.png" },
+  //         { src: "/projects/lachiommy/home-4.png" },
+  //         { src: "/projects/lachiommy/home-5.png" },
+  //       ],
+  //     },
+  //     {
+  //       title: "About page",
+  //       images: [{ src: "/projects/lachiommy/about.png" }],
+  //     },
+  //     {
+  //       title: "Services page",
+  //       images: [
+  //         { src: "/projects/lachiommy/services.png" },
+  //         { src: "/projects/lachiommy/services-2.png" },
+  //         { src: "/projects/lachiommy/services-3.png" },
+  //         { src: "/projects/lachiommy/services-4.png" },
+  //       ],
+  //     },
+  //   ],
+  // },
 
   {
     title: "Uknight",

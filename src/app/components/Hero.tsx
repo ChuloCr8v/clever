@@ -23,9 +23,8 @@ const Hero = (props: Props) => {
           Nkematu Bonaventure
         </p>
         <p className="text-base md:text-2xl mt-1 leading-none">
-          <span className=" text-primaryBlue pr-2">Frontend Developer</span>
-          <span className="text-primaryRed border-l border-gray-500 pl-2">
-            Graphic Designer
+          <span className="font-semibold text-primaryBlue pr-2">
+            Frontend Developer
           </span>
         </p>
         <div className="stacks flex flex-wrap justify-center items-center gap-2 mt-4 px-4">
@@ -56,7 +55,7 @@ const Hero = (props: Props) => {
           prevTitle={"My Resume"}
           nextTitle={"About Me"}
           nextLink="/about"
-          prevLink="https://drive.google.com/file/d/1Q3lzQXxLMaa1sTxISBE8MwPYa7AGFuSr/view?usp=sharing"
+          prevLink="https://drive.google.com/file/d/1qHv4FbFW3hBqQHdQHb9U1AIbyesokvkj/view?usp=sharing"
         />
         <Cv />
       </div>
