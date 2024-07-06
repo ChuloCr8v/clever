@@ -133,15 +133,15 @@ export const stacks = [
   {
     stack: "Next.js",
   },
-  // {
-  //   stack: "Node.js",
-  // },
-  // {
-  //   stack: "Express.js",
-  // },
-  // {
-  //   stack: "MongoDB",
-  // },
+  {
+    stack: "Node.js",
+  },
+  {
+    stack: "Express.js",
+  },
+  {
+    stack: "MongoDB",
+  },
 ];
 
 export const projects = [
@@ -150,7 +150,7 @@ export const projects = [
     description:
       "A Law firm website which highlights their various services, details, about and contact section.",
     img: "/projects/lachiommy.png",
-    url: "www.lachiommylegal.com",
+    url: "https://lachiommylegal.com",
     year: "2023",
     category: "Portfolio/Web App",
     tools: "HTML, CSS, React, Typescript, AntD, TailwindCss",
@@ -181,43 +181,51 @@ export const projects = [
       },
     ],
   },
-  // {
-  //   title: "SugBox",
-  //   description:
-  //     "A full stack(MERN) digital suggestion box with portals for admin and employee. features include anonymous suggestions, attachment uploads, upvotes, downvotes, comments, etc.",
-  //   img: "/projects/sugbox.png",
-  //   url: "www.sugbox.vercel.app",
-  //   year: "2023",
-  //   category: "Full stack Web App",
-  //   tools:
-  //     "HTML, CSS, React, Typescript, AntD, TailwindCss, Node.js, Express.js, MongoDB, redux-toolkit, rtk query, etc.",
-  //   projectImages: [
-  //     {
-  //       title: "Home Page",
-  //       images: [
-  //         { src: "/projects/lachiommy/lachiommy.png" },
-  //         { src: "/projects/lachiommy/home.png" },
-  //         { src: "/projects/lachiommy/home-2.png" },
-  //         { src: "/projects/lachiommy/home-3.png" },
-  //         { src: "/projects/lachiommy/home-4.png" },
-  //         { src: "/projects/lachiommy/home-5.png" },
-  //       ],
-  //     },
-  //     {
-  //       title: "About page",
-  //       images: [{ src: "/projects/lachiommy/about.png" }],
-  //     },
-  //     {
-  //       title: "Services page",
-  //       images: [
-  //         { src: "/projects/lachiommy/services.png" },
-  //         { src: "/projects/lachiommy/services-2.png" },
-  //         { src: "/projects/lachiommy/services-3.png" },
-  //         { src: "/projects/lachiommy/services-4.png" },
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    title: "SugBox",
+    description:
+      "A full stack(MERN) digital suggestion box with portals for admin and employee. features include anonymous suggestions, attachment uploads, upvotes, downvotes, comments, etc.",
+    img: "/projects/sugbox/portal.png",
+    url: "https://sugbox.vercel.app",
+    year: "2023",
+    category: "Full stack Web App",
+    tools:
+      "HTML, CSS, React, Typescript, AntD, TailwindCss, Node.js, Express.js, MongoDB, redux-toolkit, rtk query, etc.",
+    projectImages: [
+      {
+        title: "Portal",
+        images: [{ src: "/projects/sugbox/portal.png" }],
+      },
+      {
+        title: "Login Page",
+        images: [{ src: "/projects/sugbox/login.png" }],
+      },
+      {
+        title: "Signup Page",
+        images: [{ src: "/projects/sugbox/signup.png" }],
+      },
+      {
+        title: "Admin Dashboard",
+        images: [{ src: "/projects/sugbox/admin-dashboard.png" }],
+      },
+      {
+        title: "Employee Dashboard",
+        images: [{ src: "/projects/sugbox/employee-dashboard.png" }],
+      },
+      {
+        title: "New Suggestion Modal",
+        images: [{ src: "/projects/sugbox/new-suggestion.png" }],
+      },
+      {
+        title: "Suggestion Page",
+        images: [{ src: "/projects/sugbox/suggestion.png" }],
+      },
+      {
+        title: "New Suggestion Modal",
+        images: [{ src: "/projects/sugbox/new-suggestion.png" }],
+      },
+    ],
+  },
 
   {
     title: "Uknight",

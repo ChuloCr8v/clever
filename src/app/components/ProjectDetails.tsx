@@ -136,7 +136,7 @@ const ProjectDetails = () => {
             <div className="flex gap-4">
               {[
                 { title: "Visit Project", data: projectDetails.url },
-                { title: "Github Repo", data: projectDetails.url },
+                // { title: "Github Repo", data: projectDetails.url },
               ].map((d, index) => (
                 <a
                   href={projectDetails.url}

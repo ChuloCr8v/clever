@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Nav from "./components/Nav";
-import Header from "./layout/Header";
-import Skills from "./components/Skills";
-import { PersistGate } from "redux-persist/integration/react";
-import { Providers } from "../../redux/Providers";
-import { persistor } from "../../redux/store";
-import ThemeProvider from "./provider";
-import ThemeSwitch from "./components/ThemeSwtich";
 import { twMerge } from "tailwind-merge";
+import { Providers } from "../../redux/Providers";
+import Skills from "./components/Skills";
+import "./globals.css";
+import Header from "./layout/Header";
+import ThemeProvider from "./provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -32,7 +28,6 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Header />
             <Skills />
-
             {children}
           </ThemeProvider>
         </Providers>

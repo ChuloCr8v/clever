@@ -67,7 +67,7 @@ body::after {
   display: none;
 }
 
-.stack:nth-child(7) {
+.stack:nth-child(10) {
   border-right: none !important;
 }
 

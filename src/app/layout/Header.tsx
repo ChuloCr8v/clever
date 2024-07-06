@@ -11,7 +11,7 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {};
 
-const Header = (props: Props) => {
+const Header = () => {
   const { isMenuOpen } = useSelector(
     (state: { menu: { isMenuOpen: boolean } }) => state.menu
   );
