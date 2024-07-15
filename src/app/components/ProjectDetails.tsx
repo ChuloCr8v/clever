@@ -103,7 +103,7 @@ const ProjectDetails = () => {
     >
       <div className="max-w-6xl">
         <div className="">
-          <Image
+          <img
             src={projectDetails.img}
             alt="frontend developer"
             height={500}
