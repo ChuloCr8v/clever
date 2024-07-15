@@ -250,7 +250,7 @@ const Contact = () => {
         prevTitle={"Projects"}
         nextTitle={"Resume"}
         icon={false}
-        nextLink="https://drive.google.com/file/d/1Q3lzQXxLMaa1sTxISBE8MwPYa7AGFuSr/view?usp=sharing"
+        nextLink="https://drive.google.com/file/d/1_GrUJZrN3gDWy4CyNfniFKPY1v5Z-WTh/view?usp=sharing"
         nextExternal
         prevLink="/projects"
       />

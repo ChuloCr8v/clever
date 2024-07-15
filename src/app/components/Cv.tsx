@@ -3,8 +3,16 @@ import { Button, Modal } from "antd";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { closeCv } from "../../../redux/cv";
+import {
+  FaArrowAltCircleRight,
+  FaArrowCircleLeft,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa";
+import { motion } from "framer";
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const { isCvOpen } = useSelector(
     (state: { cv: { isCvOpen: boolean } }) => state.cv
   );
@@ -36,14 +44,54 @@ const App: React.FC = () => {
       onCancel={() => dispatch(closeCv())}
       cancelText="Ok"
       okText="Download"
+      className="flex items-center justify-center"
     >
-      <Image
-        src="/resume.png"
-        alt="nkematu bonaventure"
-        className=""
-        height="700"
-        width="700"
-      />
+      {currentPage === 1 ? (
+        <motion.div
+          initial={{ x: "100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100vw", opacity: 0 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+        >
+          <Image
+            src="/cv/1.png"
+            alt="nkematu bonaventure"
+            className="scale-110"
+            height="700"
+            width="700"
+          />
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ x: "100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100vw", opacity: 0 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+        >
+          <Image
+            src="/cv/2.png"
+            alt="nkematu bonaventure"
+            className="scale-110"
+            height="700"
+            width="700"
+          />
+        </motion.div>
+      )}
+
+      <div className="flex items-center justify-center gap-6 w-full">
+        <Button
+          disabled={currentPage === 1}
+          onClick={() => setCurrentPage(currentPage - 1)}
+        >
+          <FaArrowLeft className="" />
+        </Button>
+        <Button
+          disabled={currentPage === 2}
+          onClick={() => setCurrentPage(currentPage + 1)}
+        >
+          <FaArrowRight />
+        </Button>
+      </div>
     </Modal>
   );
 };
