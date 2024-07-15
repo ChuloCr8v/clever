@@ -46,35 +46,12 @@ const App: React.FC = () => {
       okText="Download"
       className="flex items-center justify-center"
     >
-      {currentPage === 1 ? (
-        <motion.div
-          initial={{ x: "100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "-100vw", opacity: 0 }}
-          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-        >
-          <Image
-            src="/cv/1.png"
-            alt="nkematu bonaventure"
-            height="700"
-            width="700"
-          />
-        </motion.div>
-      ) : (
-        <motion.div
-          initial={{ x: "100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "-100vw", opacity: 0 }}
-          transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
-        >
-          <Image
-            src="/cv/2.png"
-            alt="nkematu bonaventure"
-            height="700"
-            width="700"
-          />
-        </motion.div>
-      )}
+      <Image
+        src={currentPage === 1 ? "/cv/1.png" : "/cv/2.png"}
+        alt="nkematu bonaventure"
+        height="700"
+        width="700"
+      />
 
       <div className="flex items-center justify-center gap-6 w-full">
         <Button
