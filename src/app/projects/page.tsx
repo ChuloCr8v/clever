@@ -77,7 +77,7 @@ const Page = (props: Props) => {
         >
           <div className="container max-w-7xl flex flex-col xl:flex-row gap-6 xl:gap-12">
             <div className="rounded-lg overflow-hidden basis-full ">
-              <Image
+              <img
                 src={currentProjectImage}
                 height={400}
                 width={400}

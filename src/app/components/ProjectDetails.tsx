@@ -78,12 +78,12 @@ const ProjectDetails = () => {
               )}
               key={index}
             >
-              <Image
+              <img
                 height={500}
                 width={500}
                 key={index}
                 src={i.src}
-                alt={""}
+                alt={"frontend developer"}
                 className="w-full object-cover h-full"
               />
             </div>

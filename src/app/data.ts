@@ -158,7 +158,7 @@ export const projects = [
       {
         title: "Home Page",
         images: [
-          { src: "/projects/lachiommy/lachiommy.png" },
+          { src: "/projects/lachiommy/hom.png" },
           { src: "/projects/lachiommy/home.png" },
           { src: "/projects/lachiommy/home-2.png" },
           { src: "/projects/lachiommy/home-3.png" },
