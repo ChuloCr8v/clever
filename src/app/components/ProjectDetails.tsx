@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaArrowAltCircleRight, FaEye } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
 import { useRouter } from "next/navigation";
+import { Modal } from "antd";
 
 type Props = {
   projectDetails: {
@@ -25,6 +26,8 @@ type Props = {
 };
 
 const ProjectDetails = () => {
+  const [preview, setPreview] = useState({ isOpen: false, src: "", title: "" });
+
   const { isProjectDetailsOpen } = useSelector(
     (state: { projectDetails: { isProjectDetailsOpen: boolean } }) =>
       state.projectDetails
@@ -70,11 +73,15 @@ const ProjectDetails = () => {
     return (
       <div className="mt-12 xl:mt-16">
         <ImageTitle title={props.title} />
-        <div className={twMerge("flex flex-col items-center gap-4 xl:gap-6")}>
+        <div
+          className={twMerge(
+            "flex flex-col items-center justify-center gap-4 xl:gap-6 w-full"
+          )}
+        >
           {props.dataRef?.map((i: { src: string }, index) => (
             <div
               className={twMerge(
-                "rounded-lg overflow-hidden md:h-[200px] xl:h-[400px] w-full border dark:border-none shadow"
+                "group rounded-lg md:h-[200px] xl:h-[400px] w-full border dark:border-none shadow relative flex flex-col items-center justify-center overflow-hidden"
               )}
               key={index}
             >
@@ -86,6 +93,23 @@ const ProjectDetails = () => {
                 alt={"frontend developer"}
                 className="w-full object-cover h-full"
               />
+              <div
+                className={twMerge(
+                  "absolute top-full group-hover:top-0 bg-black bg-opacity-50 h-full w-full flex items-center justify-center duration-300"
+                )}
+              >
+                <FaEye
+                  className="text-2xl hover:text-primaryBlue duration-200 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation;
+                    setPreview({
+                      isOpen: true,
+                      title: props.title,
+                      src: i.src,
+                    });
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -93,9 +117,31 @@ const ProjectDetails = () => {
     );
   };
 
+  const ImagePreview = (props: { src: string; title: string }) => {
+    return (
+      <Modal
+        open={preview.isOpen}
+        onCancel={() => setPreview({ isOpen: false, title: "", src: "" })}
+        onOk={() => setPreview({ isOpen: false, title: "", src: "" })}
+        className="!max-w-[1000px] !w-full"
+      >
+        <div className="p-8 flex flex-col items-center justify-center gap-4">
+          <img
+            src={props.src}
+            alt="frontend developer"
+            className="max-w-[800px] h-full rounded-md shadow-md"
+          />
+          <p className="font-semibold text-xl bg-primaryBlue px-4 py-1 rounded shadow-md text-white mt-4">
+            {preview.title}
+          </p>
+        </div>
+      </Modal>
+    );
+  };
+
   return (
     <section
-      onClick={() => dispatch(closeProjectDetails())}
+      //onClick={() => dispatch(closeProjectDetails())}
       className={twMerge(
         "fixed overflow-y-scroll min-h-screen left-0 top-0 h-screen w-full bg-white dark:bg-gray-800 -translate-x-full duration-200 py-24 xl:pt-48 px-4 flex flex-col items-center",
         isProjectDetailsOpen && "translate-x-0"
@@ -158,6 +204,7 @@ const ProjectDetails = () => {
           ))}
         </div>
       </div>
+      <ImagePreview src={preview.src} title={preview.title} />
     </section>
   );
 };
