@@ -126,7 +126,7 @@ const Contact = () => {
                     </p>
                     {!c.subMenu ? (
                       <a
-                        href="mailto:email@example.com"
+                        href="mailto:nkematubona@gmail.com"
                         className="flex items-center gap-2 group hover:text-primaryBlue dark:hover:text-primaryRed capitalize pl-16 md:text-xl"
                       >
                         <FaArrowRight className="-rotate-45 group-hover:rotate-0 duration-200" />
