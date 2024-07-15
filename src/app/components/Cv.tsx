@@ -56,7 +56,6 @@ const App: React.FC = () => {
           <Image
             src="/cv/1.png"
             alt="nkematu bonaventure"
-            className="scale-110"
             height="700"
             width="700"
           />
@@ -71,7 +70,6 @@ const App: React.FC = () => {
           <Image
             src="/cv/2.png"
             alt="nkematu bonaventure"
-            className="scale-110"
             height="700"
             width="700"
           />
