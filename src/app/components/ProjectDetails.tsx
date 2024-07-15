@@ -125,11 +125,11 @@ const ProjectDetails = () => {
         onOk={() => setPreview({ isOpen: false, title: "", src: "" })}
         className="!max-w-[1000px] !w-full"
       >
-        <div className="p-8 flex flex-col items-center justify-center gap-4">
+        <div className="p-4 pt-12 lg:p-8 flex flex-col items-center justify-center gap-4">
           <img
             src={props.src}
             alt="frontend developer"
-            className="max-w-[800px] h-full rounded-md shadow-md"
+            className="max-w-[350px] md:max-w-[700px] h-full rounded-md shadow-md"
           />
           <p className="font-semibold text-xl bg-primaryBlue px-4 py-1 rounded shadow-md text-white mt-4">
             {preview.title}
