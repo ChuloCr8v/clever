@@ -32,7 +32,7 @@ const Page = (props: Props) => {
   return (
     <>
       <AnimatePresence>
-        <div className="flex flex-col items-center justify-center pt-24 xl:pt-36 pb-24 px-3 overflow-x-hidden relative">
+        <div className="flex flex-col items-center justify-center pt-24 xl:pt-36 pb-24 px-4 overflow-x-hidden relative">
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

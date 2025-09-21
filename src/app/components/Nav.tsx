@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { FaBriefcase, FaHeadphonesAlt, FaHome, FaUser } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 import { closeMenu } from "../../../redux/menu";
@@ -10,23 +10,24 @@ import { usePathname } from "next/navigation";
 
 type Props = { isOpen: boolean };
 
+export const menu = [
+  { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
+  { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
+  {
+    title: "Projects",
+    url: "/projects",
+    icon: <FaBriefcase className="text-[16px]" />,
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+    icon: <FaHeadphonesAlt className="text-[16px]" />,
+  },
+];
+
 const Nav = (props: Props) => {
   const dispatch = useDispatch();
   const currentRoute = usePathname();
-  const menu = [
-    { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
-    { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
-    {
-      title: "Projects",
-      url: "/projects",
-      icon: <FaBriefcase className="text-[16px]" />,
-    },
-    {
-      title: "Contact",
-      url: "/contact",
-      icon: <FaHeadphonesAlt className="text-[16px]" />,
-    },
-  ];
 
   console.log(currentRoute);
   return (

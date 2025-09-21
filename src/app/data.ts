@@ -1,115 +1,46 @@
 export const skills = [
-  {
-    skill: "HTML",
-    icon: "",
-    type: "language",
-  },
-  {
-    skill: "CSS",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "Sass",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "TailwindCss",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "Boostrap",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "AntD",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "ChakraUI",
-    icon: "",
-    type: "style",
-  },
-  {
-    skill: "JavaScript",
-    icon: "",
-    type: "language",
-  },
-  {
-    skill: "Git/Github",
-    icon: "",
-    type: "versionControl",
-  },
-  {
-    skill: "TypeScript",
-    icon: "",
-    type: "language",
-  },
-  {
-    skill: "React.js",
-    icon: "",
-    type: "framework",
-  },
-  {
-    skill: "Next.js",
-    icon: "",
-    type: "framework",
-  },
-  {
-    skill: "Express.js",
-    icon: "",
-    type: "framework",
-  },
-  {
-    skill: "MongoDb",
-    icon: "",
-    type: "database",
-  },
-  {
-    skill: "Firebase",
-    icon: "",
-    type: "database",
-  },
-  {
-    skill: "Node.js",
-    icon: "",
-    type: "language",
-  },
-  {
-    skill: "Redux",
-    icon: "",
-    type: "others",
-  },
-  {
-    skill: "Framer",
-    icon: "",
-    type: "others",
-  },
-  {
-    skill: "Photoshop",
-    icon: "",
-    type: "design",
-  },
-  {
-    skill: "Canva",
-    icon: "",
-    type: "design",
-  },
-  {
-    skill: "Figma",
-    icon: "",
-    type: "design",
-  },
-  {
-    skill: "Illustrator",
-    icon: "",
-    type: "design",
-  },
+  // 🌐 Languages
+  { skill: "HTML", type: "language", icon: "" },
+  { skill: "CSS", type: "style", icon: "" },
+  { skill: "JavaScript", type: "language", icon: "" },
+  { skill: "TypeScript", type: "language", icon: "" },
+
+  // 🎨 Styling & UI
+  { skill: "Sass", type: "style", icon: "" },
+  { skill: "TailwindCSS", type: "style", icon: "" },
+  { skill: "Bootstrap", type: "style", icon: "" },
+  { skill: "Ant Design", type: "style", icon: "" },
+  { skill: "Chakra UI", type: "style", icon: "" },
+
+  // ⚛️ Frameworks & Libraries
+  { skill: "React.js", type: "framework", icon: "" },
+  { skill: "Next.js", type: "framework", icon: "" },
+  { skill: "React Native", type: "framework", icon: "" },
+  { skill: "Express.js", type: "framework", icon: "" },
+  { skill: "NestJS", type: "framework", icon: "" },
+
+  // 🗄️ Databases & ORMs
+  { skill: "MongoDB", type: "database", icon: "" },
+  { skill: "PostgreSQL", type: "database", icon: "" },
+  { skill: "Prisma", type: "database", icon: "" },
+  { skill: "Firebase", type: "database", icon: "" },
+  { skill: "Cloudinary", type: "database", icon: "" },
+
+  // 🔧 Tools & State Management
+  { skill: "Redux Toolkit", type: "others", icon: "" },
+  { skill: "RTK Query", type: "others", icon: "" },
+  { skill: "Git/GitHub", type: "versionControl", icon: "" },
+
+  // 🎬 Animation
+  // { skill: "Framer Motion", type: "others", icon: "" },
+
+  // 🎨 Design
+  { skill: "Figma", type: "design", icon: "" },
+  { skill: "Canva", type: "design", icon: "" },
+  { skill: "Photoshop", type: "design", icon: "" },
+  { skill: "Illustrator", type: "design", icon: "" },
 ];
+
 
 export const stacks = [
   {

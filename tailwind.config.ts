@@ -22,6 +22,15 @@ const config: Config = {
         primaryBlue: "#06a8f7",
         primaryRed: "#ff2768",
       },
+      keyframes: {
+        pop: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        pop: "pop 0.5s forwards",
+      },
     },
   },
   plugins: [],

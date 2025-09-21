@@ -22,7 +22,7 @@ const CategoryTag = ({ category, className }: Props) => {
     <Tag
       className={twMerge(
         `rounded-full font-semibold capitalize px-3 py-1
-         backdrop-blur-md shadow-lg transition-all duration-300`,
+         backdrop-blur-md transition-all duration-300`,
         className
       )}
       style={{

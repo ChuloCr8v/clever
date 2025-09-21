@@ -37,18 +37,17 @@ const Hero = () => {
             </div>
           ))}
         </div>{" "}
-        <div className="flex items-center gap-4 mt-12">
+        <div className="flex items-center gap-3 mt-8">
           {" "}
           <Button
             prevBtn
             onclick={() => dispatch(openCv())}
             title={"My Resume"}
-            className="border-[1.5px] py-2 md:py-1 border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
           />
           <Button
             onclick={() => dispatch(openSkills())}
             title={"More Skills"}
-            className="border-[1.5px] py-2 md:py-1 border-transparent hover:border-gray-700  hover:bg-gray-800 text-sm md:bg-gray-700 dark:text-gray-300 font-normal"
+            type="secondary"
           />
         </div>
         <FooterButton

@@ -33,7 +33,7 @@ const Header = () => {
           <img
             src="/logo.png"
             alt="nkematu bonaventure"
-            className="h-12 w-auto"
+            className="h-10 md:h-14 w-auto"
           />
         </Link>
         <ThemeSwitch />
