@@ -108,7 +108,7 @@ const Contact = () => {
     <AnimatePresence>
       <div className="overflow-hidden flex items-center justify-center min-h-screen w-full ">
         <motion.section
-          className="pt-24 xl:pt-40 pb-32 px-6 w-full flex items-center justify-center"
+          className="pt-24 xl:pt-40 pb-32 px-4 w-full flex items-center justify-center"
           initial={{ x: "100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100vw", opacity: 0 }}

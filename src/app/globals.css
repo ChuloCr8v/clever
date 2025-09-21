@@ -1,30 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
+
+/* Add Raleway as the global font */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --font-raleway: "Raleway", sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-} */
-
-body {
+  @apply font-sans;
+  font-family: var(--font-raleway);
   transition: 0.3s;
   /* background-image: url("/bg.png");
   background-size: contain;
   background-position: center; */
+}
+
+:where(.css-dev-only-do-not-override-2q8sxy).ant-drawer-right
+  > .ant-drawer-content-wrapper {
+  box-shadow: none !important;
 }
 
 body:before,
@@ -43,24 +37,12 @@ body:before,
 .skills-section:before {
   @apply dark:opacity-[0.04];
 }
-/*
-body::after {
-  content: "";
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: #000;
-  height: 100vh;
-  width: 100vw;
-  z-index: -20;
-  opacity: 0.7;
-} */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* letter-spacing: 0.05em; */
+  font-family: var(--font-raleway);
 }
 
 ::-webkit-scrollbar {
@@ -80,13 +62,13 @@ body::after {
 }
 
 p.menu-item {
-  transform: scale(2px); /* W3C */
+  transform: scale(2px);
   color: transparent;
   -webkit-text-stroke: 2px #000;
 }
 
 p.menu-item:hover {
-  transform: scale(0.5px); /* W3C */
+  transform: scale(0.5px);
   -webkit-text-stroke: 2px #06a8f7;
 }
 
@@ -117,12 +99,11 @@ p.menu-item:hover {
 
 @media (min-width: 1400px) {
   .about-image {
-    max-width: 4900px; /* Set the initial width of the image */
+    max-width: 4900px;
     width: 100%;
     height: 100vh;
     background: #000;
     border-bottom-left-radius: 0 !important;
-    /* Optional: Add max-width to prevent the image from becoming too large on larger screens */
   }
   .about-image_img::after {
     content: "";
@@ -145,11 +126,3 @@ p.menu-item:hover {
 :where(.css-dev-only-do-not-override-2q8sxy).ant-btn-primary {
   background: #1677ff !important;
 }
-/* 
-.header-stroke {
-  @apply;
-} */
-/* 
-.hamburger-react {
-  @apply dark:text-gray-800 dark:hover:text-primaryRed;
-} */

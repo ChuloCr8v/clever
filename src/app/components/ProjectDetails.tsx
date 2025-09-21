@@ -2,12 +2,20 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaArrowAltCircleRight, FaEye } from "react-icons/fa";
+import {
+  FaArrowAltCircleRight,
+  FaEye,
+  FaRegWindowClose,
+  FaWindowClose,
+} from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
-import { useRouter } from "next/navigation";
-import { Modal } from "antd";
+import { Drawer, Modal } from "antd";
+import { motion } from "framer-motion";
+import CategoryTag from "./CategoryTag";
+import ProjectPreviewFooter from "./ProjectPreviewFooter";
+import { BiXCircle } from "react-icons/bi";
 
 type Props = {
   projectDetails: {
@@ -47,22 +55,34 @@ const ProjectDetails = () => {
 
   const ImageTitle = (props: { title: string }) => {
     return (
-      <p className="text-center my-6 font-bold text-lg md:text-xl  dark:text-primaryRed text-primaryBlue">
+      <motion.p
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-left font-semibold text-base border-b border-b-gray-300 dark:border-b-gray-600 pb-2 w-full "
+      >
         {props.title}
-      </p>
+      </motion.p>
     );
   };
 
   const DetailRow = (props: { rowTitle: string; rowData?: string }) => {
     return (
-      <div className="flex items-start justify-between border-b border-dotted border-gray-500 pb-2 md:text-xl xl:text-lg">
-        <p className=" basis-full font-bold dark:text-primaryRed text-primaryBlue">
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+        className="flex flex-col items-start p-3 rounded-xl backdrop-blur-md 
+        bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/50
+        shadow-sm gap-2"
+      >
+        <p className="font-semibold border-b border-b-gray-300 dark:border-b-gray-600 pb-2 w-full text-base">
           {props.rowTitle}
         </p>
-        <p className="text-left basis-full dark:text-gray-400 text-gray-500 ">
+        <p className="text-left dark:text-gray-300 text-gray-600 text-sm py-2">
           {props.rowData}
         </p>
-      </div>
+      </motion.div>
     );
   };
 
@@ -71,37 +91,32 @@ const ProjectDetails = () => {
     dataRef: { src: string }[];
   }) => {
     return (
-      <div className="mt-12 xl:mt-16">
+      <div
+        className="flex flex-col items-start p-3 rounded-xl backdrop-blur-md 
+        bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/50
+        shadow-sm gap-4"
+      >
         <ImageTitle title={props.title} />
-        <div
-          className={twMerge(
-            "flex flex-col items-center justify-center gap-4 xl:gap-6 w-full"
-          )}
-        >
+        <div className="flex flex-col items-center justify-center gap-4 xl:gap-6 w-full">
           {props.dataRef?.map((i: { src: string }, index) => (
-            <div
-              className={twMerge(
-                "group rounded-lg md:h-[200px] xl:h-[400px] w-full border dark:border-none shadow relative flex flex-col items-center justify-center overflow-hidden"
-              )}
+            <motion.div
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="group rounded-lg md:h-[200px] xl:h-[400px] w-full border dark:border-none shadow relative flex flex-col items-center justify-center overflow-hidden"
               key={index}
             >
               <img
                 height={500}
                 width={500}
-                key={index}
                 src={i.src}
                 alt={"frontend developer"}
                 className="w-full object-cover h-full"
               />
-              <div
-                className={twMerge(
-                  "absolute top-full group-hover:top-0 bg-black bg-opacity-50 h-full w-full flex items-center justify-center duration-300"
-                )}
-              >
+              <div className="absolute top-full group-hover:top-0 bg-black bg-opacity-50 h-full w-full flex items-center justify-center duration-300">
                 <FaEye
-                  className="text-2xl hover:text-primaryBlue duration-200 cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation;
+                  className="text-2xl hover:text-primaryBlue dark:hover:text-primaryRed duration-200 cursor-pointer"
+                  onClick={(e: any) => {
+                    e.stopPropagation();
                     setPreview({
                       isOpen: true,
                       title: props.title,
@@ -110,7 +125,7 @@ const ProjectDetails = () => {
                   }}
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -123,89 +138,132 @@ const ProjectDetails = () => {
         open={preview.isOpen}
         onCancel={() => setPreview({ isOpen: false, title: "", src: "" })}
         onOk={() => setPreview({ isOpen: false, title: "", src: "" })}
-        className="!max-w-[1000px] !w-full"
+        className={twMerge(
+          "!max-w-[1000px] !w-full",
+          "[&_.ant-modal-content]:!rounded-2xl",
+          "[&_.ant-modal-content]:backdrop-blur-xl",
+          "[&_.ant-modal-content]:shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+          "[&_.ant-modal-content]:!border",
+          "[&_.ant-modal-content]:!bg-white/30",
+          "dark:[&_.ant-modal-content]:!bg-gray-900/30",
+          "[&_.ant-modal-content]:!border-white/40",
+          "dark:[&_.ant-modal-content]:!border-gray-700/50"
+        )}
       >
-        <div className="p-4 pt-12 lg:p-8 flex flex-col items-center justify-center gap-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.3 }}
+          className="p-4 pt-12 lg:p-8 flex flex-col items-center justify-center gap-4"
+        >
           <img
             src={props.src}
             alt="frontend developer"
             className="max-w-[350px] md:max-w-[700px] h-full rounded-md shadow-md"
           />
-          <p className="font-semibold text-xl bg-primaryBlue px-4 py-1 rounded shadow-md text-white mt-4">
+          <p
+            className="font-semibold text-xl px-4 py-1 rounded shadow-md mt-4 
+            text-white bg-primaryBlue/80 dark:bg-primaryRed/80 
+            backdrop-blur-md border border-white/20 dark:border-gray-700/40"
+          >
             {preview.title}
           </p>
-        </div>
+        </motion.div>
       </Modal>
     );
   };
 
   return (
-    <section
-      //onClick={() => dispatch(closeProjectDetails())}
-      className={twMerge(
-        "fixed overflow-y-scroll min-h-screen left-0 top-0 h-screen w-full bg-white dark:bg-gray-800 -translate-x-full duration-200 py-24 xl:pt-48 px-4 flex flex-col items-center",
-        isProjectDetailsOpen && "translate-x-0"
-      )}
+    <Drawer
+      classNames={{
+        content: twMerge(
+          "lg:!mr-4 !my-[2vh] !rounded-3xl !h-[96vh] !w-[97%] !place-self-center",
+          "!backdrop-blur-xl",
+          "!border",
+          "dark:!bg-gray-900/30 dark:border-gray-700/50"
+        ),
+        footer: "!mt-0 !p-0",
+        header: "!p-0",
+        body: "!p-3 lg:!p-6",
+      }}
+      open={isProjectDetailsOpen}
+      onClose={() => dispatch(closeProjectDetails())}
+      width={800}
+      closeIcon={null}
+      title={
+        <div className="relative p-3 lg:p-6 border-b border-gray-300 dark:border-gray-600 flex items-center justify-between">
+          <div className="flex flex-col items-start md:flex-row md:items-center gap-2 md:gap-4">
+            <h2 className="font-bold text-2xl dark:text-primaryRed text-primaryBlue">
+              {projectDetails.title}
+            </h2>
+            <CategoryTag
+              category={projectDetails.category}
+              className="py-1 px-3 text-xs md:text-sm"
+            />
+          </div>
+
+          <BiXCircle
+            size={28}
+            color="red"
+            onClick={() => dispatch(closeProjectDetails())}
+          />
+        </div>
+      }
+      footer={
+        <ProjectPreviewFooter
+          data={{ url: projectDetails.url, github: projectDetails.url }}
+        />
+      }
     >
-      <div className="max-w-6xl">
-        <div className="">
-          <img
+      <div>
+        <div>
+          <motion.img
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             src={projectDetails.img}
             alt="frontend developer"
             height={500}
             width={500}
-            className="rounded-lg w-full h-full object-cover border"
+            className="rounded-xl w-full h-full object-cover border border-gray-300 dark:border-gray-600"
           />
-          <div className="mt-6 xl:mt-12">
-            <h2 className="font-bold text-2xl xl:text-4xl border-b dark:border-gray-200 border-gray-500 pb-2 ">
-              {projectDetails.title}
-            </h2>
-            <div className="xl:flex items-start xl:gap-12 xl:mt-8">
-              <div className="flex flex-col gap-4 mt-6 xl:mt-0 xl:order-2 basis-full">
-                {[
-                  { title: "Category", data: projectDetails.category },
-                  { title: "Tools", data: projectDetails.tools },
-                  { title: "Year", data: projectDetails.year },
-                ].map((d, index) => (
-                  <DetailRow rowTitle={d.title} rowData={d.data} key={index} />
-                ))}
-              </div>
-              <div className="">
-                <p className="mt-8 xl:mt-0 text-lg md:text-xl font-semibold text-primaryBlue dark:text-primaryRed">
-                  About
-                </p>
-                <p className="md:text-xl xl:text-lg mt-2 mb-6 dark:text-gray-400 text-gray-500 text-justify">
-                  {projectDetails.description}
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-6"
+          >
+            <div className="flex flex-col gap-4">
               {[
-                { title: "Visit Project", data: projectDetails.url },
-                // { title: "Github Repo", data: projectDetails.url },
+                // { title: "Category", data: projectDetails.category },
+                { title: "Overview", data: projectDetails.description },
+                { title: "Tools", data: projectDetails.tools },
+                // { title: "Year", data: projectDetails.year },
               ].map((d, index) => (
-                <a
-                  href={projectDetails.url}
-                  key={index}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[14px] md:text-xl xl:text-lg dark:text-gray-400 text-gray-500 dark:hover:text-primaryRed hover:text-primaryBlue duration-200"
-                >
-                  {d.title}
-                  <FaArrowAltCircleRight />
-                </a>
+                <DetailRow rowTitle={d.title} rowData={d.data} key={index} />
               ))}
-            </div>{" "}
-          </div>
+            </div>
+          </motion.div>
         </div>
-        <div className="">
-          {projectDetails?.projectImages?.map((img, index) => (
-            <ProjectImages dataRef={img.images} title={img.title} key={index} />
-          ))}
+
+        <div className="space-y-4 mt-4">
+          <p className="font-semibold text-base pb-2 border-b border-b-gray-300 dark:border-b-gray-600 w-full">
+            Project Images
+          </p>
+          <div className="space-y-4">
+            {projectDetails?.projectImages?.map((img, index) => (
+              <ProjectImages
+                dataRef={img.images}
+                title={img.title}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <ImagePreview src={preview.src} title={preview.title} />
-    </section>
+    </Drawer>
   );
 };
 
