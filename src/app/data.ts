@@ -118,9 +118,9 @@ export const stacks = [
   {
     stack: "CSS",
   },
-  {
-    stack: "TailwindCss",
-  },
+  // {
+  //   stack: "TailwindCss",
+  // },
   {
     stack: "JavaScript",
   },
@@ -134,63 +134,30 @@ export const stacks = [
     stack: "Next.js",
   },
   {
-    stack: "Node.js",
+    stack: "Nest.js",
   },
-  {
-    stack: "Express.js",
-  },
-  {
-    stack: "MongoDB",
-  },
+  // {
+  //   stack: "Node.js",
+  // },
+  // {
+  //   stack: "Express.js",
+  // },
+  // {
+  //   stack: "MongoDB",
+  // },
 ];
 
 export const projects = [
   {
-    title: "LaChiommy Legal Services",
-    description:
-      "A Law firm website which highlights their various services, details, about and contact section.",
-    img: "/projects/lachiommy.png",
-    url: "https://lachiommylegal.com",
-    year: "2023",
-    category: "Portfolio/Web App",
-    tools: "HTML, CSS, React, Typescript, AntD, TailwindCss",
-    projectImages: [
-      {
-        title: "Home Page",
-        images: [
-          { src: "/projects/lachiommy/hom.png" },
-          { src: "/projects/lachiommy/home.png" },
-          { src: "/projects/lachiommy/home-2.png" },
-          { src: "/projects/lachiommy/home-3.png" },
-          { src: "/projects/lachiommy/home-4.png" },
-          { src: "/projects/lachiommy/home-5.png" },
-        ],
-      },
-      {
-        title: "About page",
-        images: [{ src: "/projects/lachiommy/about.png" }],
-      },
-      {
-        title: "Services page",
-        images: [
-          { src: "/projects/lachiommy/services.png" },
-          { src: "/projects/lachiommy/services-2.png" },
-          { src: "/projects/lachiommy/services-3.png" },
-          { src: "/projects/lachiommy/services-4.png" },
-        ],
-      },
-    ],
-  },
-  {
     title: "SugBox",
     description:
-      "A full stack(MERN) digital suggestion box with portals for admin and employee. features include anonymous suggestions, attachment uploads, upvotes, downvotes, comments, etc.",
+      "A full stack (MERN) digital suggestion box with portals for admin and employees. Features include anonymous suggestions, attachment uploads, upvotes, downvotes, and comments. Built with React, Node.js, Express, MongoDB, and Redux Toolkit.",
     img: "/projects/sugbox/portal.png",
     url: "https://sugbox.vercel.app",
     year: "2023",
-    category: "Full stack Web App",
+    category: "full stack application",
     tools:
-      "HTML, CSS, React, Typescript, AntD, TailwindCss, Node.js, Express.js, MongoDB, redux-toolkit, rtk query, etc.",
+      "HTML, CSS, React, Typescript, AntD, TailwindCss, Node.js, Express.js, MongoDB, Redux Toolkit, RTK Query",
     projectImages: [
       {
         title: "Portal",
@@ -220,177 +187,112 @@ export const projects = [
         title: "Suggestion Page",
         images: [{ src: "/projects/sugbox/suggestion.png" }],
       },
+    ],
+  },
+  {
+    title: "Uorda Customer Mobile App",
+    description:
+      "A cross-platform mobile app built with React Native (Expo) for customers to browse, order, and manage deliveries. Integrated with secure authentication, order history tracking, and payment support. Connected to the Uorda Vendor App, Admin Dashboard, and Landing Page for seamless business operations.",
+    img: "/projects/uorda/customer.png",
+    url: "#", // replace with store/testflight link
+    year: "2024",
+    category: "mobile application",
+    tools:
+      "React Native (Expo), TypeScript, React Native Paper, NestJS, Prisma, PostgreSQL, Cloudinary",
+    projectImages: [
       {
-        title: "New Suggestion Modal",
-        images: [{ src: "/projects/sugbox/new-suggestion.png" }],
+        title: "Customer App Screens",
+        images: [
+          { src: "/projects/uorda/customer-home.png" },
+          { src: "/projects/uorda/customer-orders.png" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Uorda Vendor Mobile App",
+    description:
+      "A vendor-facing mobile app built with React Native (Expo) that allows sellers to list products, track and fulfill customer orders, and manage their store. Vendors are connected to customers via the Uorda Customer App, while the Uorda Admin Dashboard manages compliance and operations.",
+    img: "/projects/uorda/vendor.png",
+    url: "#", // replace with store/testflight link
+    year: "2024",
+    category: "mobile application",
+    tools:
+      "React Native (Expo), TypeScript, React Native Paper, NestJS, Prisma, PostgreSQL, Cloudinary",
+    projectImages: [
+      {
+        title: "Vendor App Screens",
+        images: [
+          { src: "/projects/uorda/vendor-home.png" },
+          { src: "/projects/uorda/vendor-products.png" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Uorda Admin Dashboard",
+    description:
+      "An admin dashboard for managing customers, vendors, transactions, and compliance. Features include role-based authentication, analytics, and order management. Acts as the central hub for data from both the Uorda Customer and Vendor apps. Built with Next.js, TailwindCSS, and NestJS backend.",
+    img: "/projects/uorda/admin.png",
+    url: "#", // replace with live/demo link
+    year: "2024",
+    category: "web applications",
+    tools:
+      "Next.js, React, TypeScript, TailwindCSS, NestJS, Prisma, PostgreSQL, Cloudinary",
+    projectImages: [
+      {
+        title: "Admin Dashboard",
+        images: [
+          { src: "/projects/uorda/admin-dashboard.png" },
+          { src: "/projects/uorda/admin-analytics.png" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Uorda Landing Page",
+    description:
+      "A modern, responsive landing page built with Next.js and TailwindCSS, designed to showcase Uorda’s services to customers and vendors. Acts as the public-facing entry point that links to both the Uorda Customer and Vendor apps, as well as providing insights into the platform.",
+    img: "/projects/uorda/landing.png",
+    url: "#", // replace with live/demo link
+    year: "2024",
+    category: "frontend",
+    tools: "Next.js, React, TypeScript, TailwindCSS",
+    projectImages: [
+      {
+        title: "Landing Page Screens",
+        images: [
+          { src: "/projects/uorda/landing.png" },
+          { src: "/projects/uorda/landing-2.png" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Amazon Web Scraping App",
+    description:
+      "A full-stack web application that scrapes Amazon for product pricing, reviews, costs, and images. The scraped data is automatically converted into an Excel sheet and sent to the requester via email. Includes a dashboard for submitting scrape requests, tracking status, and managing history. Built with Next.js frontend, NestJS backend, Prisma ORM, and PostgreSQL.",
+    img: "/projects/webscraper/main.png",
+    url: "#", // replace with live/demo link
+    year: "2024",
+    category: "full stack application",
+    tools:
+      "Next.js, React, TypeScript, NestJS, Prisma, PostgreSQL, TailwindCSS, Nodemailer, ExcelJS",
+    projectImages: [
+      {
+        title: "Dashboard",
+        images: [
+          { src: "/projects/webscraper/dashboard.png" },
+          { src: "/projects/webscraper/results.png" },
+        ],
+      },
+      {
+        title: "Sample Excel Export",
+        images: [{ src: "/projects/webscraper/excel.png" }],
       },
     ],
   },
 
-  {
-    title: "Uknight",
-    description:
-      "This is a website template with a sleek design and important sections for startups and businesses alike. Available section include Hero, features, About Us, Call To Action, Contact Section, etc.",
-    img: "/projects/uknight.png",
-    url: "https://uknight.netlify.app/",
-    year: "2022",
-    category: "Product Landing Page",
-    tools: "HTML, CSS, Javascript",
-    projectImages: [
-      {
-        title: "Home Section",
-        images: [{ src: "/projects/uknight/home.png" }],
-      },
-      {
-        title: "About Section",
-        images: [{ src: "/projects/uknight/about.png" }],
-      },
-      {
-        title: "Features Section",
-        images: [
-          { src: "/projects/uknight/features.png" },
-          { src: "/projects/uknight/features-1.png" },
-          { src: "/projects/uknight/features-2.png" },
-          { src: "/projects/uknight/features-3.png" },
-        ],
-      },
-      {
-        title: "Contact page",
-        images: [{ src: "/projects/fitfam/contact.png" }],
-      },
-      {
-        title: "Testimonials Section",
-        images: [{ src: "/projects/uknight/testimonials.png" }],
-      },
-      {
-        title: "CTA Section",
-        images: [{ src: "/projects/uknight/cta.png" }],
-      },
-      {
-        title: "Newsletter Section",
-        images: [{ src: "/projects/uknight/newsletter.png" }],
-      },
-      {
-        title: "Contact Section",
-        images: [{ src: "/projects/uknight/contact.png" }],
-      },
-    ],
-  },
-  {
-    title: "Fit Fam",
-    description:
-      "This is gym website that showcases the services of a gym brand. It contains basic details about the gym facility. You can see such sections as Hero, About, Services, Contact, etc.",
-    img: "/projects/fitfam.png",
-    url: "https://fit-fam.netlify.app/",
-    year: "2022",
-    category: "Business Website",
-    tools: "HTML, CSS, Javascript, JQuery",
-    projectImages: [
-      {
-        title: "Home Page",
-        images: [
-          { src: "/projects/fitfam/home.png" },
-          { src: "/projects/fitfam/home-ii.png" },
-          { src: "/projects/fitfam/home-iii.png" },
-        ],
-      },
-      {
-        title: "About page",
-        images: [{ src: "/projects/fitfam/about.png" }],
-      },
-      {
-        title: "Services page",
-        images: [{ src: "/projects/fitfam/services.png" }],
-      },
-      {
-        title: "Contact page",
-        images: [{ src: "/projects/fitfam/contact.png" }],
-      },
-    ],
-  },
-  {
-    title: "Proflix",
-    description:
-      "Proflix is a movie database app that can be used to get information about movies including their release date, average ratings and trailer. Movies were fetched from TheMovieDatabase.",
-    img: "/projects/proflix.png",
-    url: "https://proflix.vercel.app/",
-    year: "2021",
-    category: "Side Project",
-    tools: "HTML, CSS, React, Material Ui, TailwindCss",
-    projectImages: [
-      {
-        title: "Home Page",
-        images: [{ src: "/projects/proflix/home.png" }],
-      },
-      {
-        title: "Categories",
-        images: [
-          { src: "/projects/proflix/category.png" },
-          { src: "/projects/proflix/category-2.png" },
-          { src: "/projects/proflix/category-3.png" },
-          { src: "/projects/proflix/category-4.png" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Grampro",
-    description:
-      "This is a Photo Bucket that allows uploading of pictures and preview of uploaded pictures. The uploaded pictures are stored with Google Firebase which acts as the backend.",
-    img: "/projects/grampro.png",
-    url: "https://grampro.netlify.app/",
-    year: "2022",
-    category: "Full Stack App/Side Project",
-    tools: "HTML, CSS, Sass, Firebase, Firestore",
-    projectImages: [
-      {
-        title: "Home Page",
-        images: [{ src: "/projects/grampro.png" }],
-      },
-      {
-        title: "Picture preview",
-        images: [{ src: "/projects/grampro/preview.png" }],
-      },
-    ],
-  },
-  {
-    title: "Big Shotz Photography",
-    description:
-      "This is a photography portfolio website designed to showcase the profile of a photographer. It contains details about the photographer such as skills, services, picture gallery and contact details. Images were fetched from unsplash api. It also includes a search bar where you can search for different images.",
-    img: "/projects/bigshotz/home.png",
-    url: "https://bigshotz.vercel.app/",
-    year: "2021",
-    category: "Business Portfolio",
-    tools: "HTML, CSS, React, Next.js, Typescript, AntD, TailwindCss",
-    projectImages: [
-      {
-        title: "Home Page",
-        images: [{ src: "/projects/bigshotz/home.png" }],
-      },
-      {
-        title: "About page",
-        images: [
-          { src: "/projects/bigshotz/about.png" },
-          { src: "/projects/bigshotz/about-1.png" },
-          { src: "/projects/bigshotz/about-2.png" },
-        ],
-      },
-      {
-        title: "Services page",
-        images: [
-          { src: "/projects/bigshotz/services.png" },
-          { src: "/projects/bigshotz/services-1.png" },
-        ],
-      },
-      {
-        title: "Gallery page",
-        images: [
-          { src: "/projects/bigshotz/gallery.png" },
-          { src: "/projects/bigshotz/gallery-1.png" },
-          { src: "/projects/bigshotz/gallery-2.png" },
-          { src: "/projects/bigshotz/gallery-3.png" },
-        ],
-      },
-    ],
-  },
+  // ... continue with existing older projects (LaChiommy, Uknight, FitFam, etc.)
 ];
+

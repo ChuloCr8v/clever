@@ -8,9 +8,7 @@ import FooterButton from "./FooterButton";
 import Cv from "./Cv";
 import { openCv } from "../../../redux/cv";
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   const dispatch = useDispatch();
 
   return (
@@ -24,13 +22,16 @@ const Hero = (props: Props) => {
         </p>
         <p className="text-base md:text-2xl mt-1 leading-none">
           <span className="font-semibold text-primaryBlue pr-2">
-            Frontend Developer
+            Senior Frontend Developer
           </span>
         </p>
         <div className="stacks flex flex-wrap justify-center items-center gap-2 mt-4 px-4">
           {stacks.map((s, index) => (
-            <div className="border-r border-gray-500 pr-2 stack" key={index}>
-              <p className="text-base md:text-xl capitalize leading-none  dark:text-gray-400 text-gray-500">
+            <div
+              className="border-r last-of-type:border-0 border-gray-500 pr-2 stack"
+              key={index}
+            >
+              <p className="text-sm capitalize leading-none dark:text-gray-300 text-gray-300">
                 {s.stack}
               </p>
             </div>
