@@ -115,7 +115,7 @@ const ProjectDetails = () => {
               <div className="absolute top-full group-hover:top-0 bg-black bg-opacity-50 h-full w-full flex items-center justify-center duration-300">
                 <FaEye
                   className="text-2xl hover:text-primaryBlue dark:hover:text-primaryRed duration-200 cursor-pointer"
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     e.stopPropagation();
                     setPreview({
                       isOpen: true,
