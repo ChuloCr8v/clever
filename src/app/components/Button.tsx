@@ -5,15 +5,17 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {
   external?: boolean;
-  title: string;
+  title: ReactNode;
   link?: string;
   className?: string;
   icon?: ReactNode;
   onclick?: MouseEventHandler<HTMLButtonElement>;
   prevBtn?: boolean;
+  type?: "secondary" | "primary";
 };
 
 const Button = (props: Props) => {
+  // console.log(props.type);
   return (
     <div>
       {props.link ? (
@@ -44,7 +46,9 @@ const Button = (props: Props) => {
         <button
           onClick={props.onclick}
           className={twMerge(
-            "group bg-gray-700 hover:bg-gray-800 duration-200 text-white font-semibold w-[130px] py-1 rounded text-sm flex items-center justify-center gap-2 md:text-base",
+            "group bg-gradient-to-t from-gray-950/40 to-gray-700/60 hover:bg-gradient-to-b !duration-200 text-white px-4 h-9 rounded-lg text-xs flex items-center justify-center gap-2 md:text-base overflow-hidden border border-gray-700 backdrop-blur-sm transition-all",
+            props.type === "secondary" &&
+              "!from-transparent !to-transparent hover:border-primaryBlue hover:text-primaryBlue",
             props.className
           )}
         >

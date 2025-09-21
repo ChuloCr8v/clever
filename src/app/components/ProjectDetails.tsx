@@ -1,13 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-  FaArrowAltCircleRight,
-  FaEye,
-  FaRegWindowClose,
-  FaWindowClose,
-} from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import { closeProjectDetails } from "../../../redux/projectDetails";
@@ -15,7 +9,7 @@ import { Drawer, Modal } from "antd";
 import { motion } from "framer-motion";
 import CategoryTag from "./CategoryTag";
 import ProjectPreviewFooter from "./ProjectPreviewFooter";
-import { BiXCircle } from "react-icons/bi";
+import { BiX } from "react-icons/bi";
 
 type Props = {
   projectDetails: {
@@ -192,8 +186,8 @@ const ProjectDetails = () => {
       width={800}
       closeIcon={null}
       title={
-        <div className="relative p-3 lg:p-6 border-b border-gray-300 dark:border-gray-600 flex items-center justify-between">
-          <div className="flex flex-col items-start md:flex-row md:items-center gap-2 md:gap-4">
+        <div className="relative p-3 lg:p-6 border-b bg-gray-900 border-gray-300 dark:border-gray-600 flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
             <h2 className="font-bold text-2xl dark:text-primaryRed text-primaryBlue">
               {projectDetails.title}
             </h2>
@@ -203,10 +197,11 @@ const ProjectDetails = () => {
             />
           </div>
 
-          <BiXCircle
+          <BiX
             size={28}
-            color="red"
+            color="white"
             onClick={() => dispatch(closeProjectDetails())}
+            className="cursor-point"
           />
         </div>
       }
