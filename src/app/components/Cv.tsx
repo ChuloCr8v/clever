@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const handleOk = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/file/d/1US9pUUkSx0krHbO8v2IUw4qfW4ANI7rm/view?usp=drive_link";
+      "https://drive.google.com/file/d/1hVUCEoKE1CkH-AhqTIxJUV7-_4idTpTz/view?usp=sharing";
     link.target = "_blank"; // Open the link in a new tab/window if needed
     link.innerText = "Cv";
 

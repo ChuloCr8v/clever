@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeSkills } from "../../../redux/skills";
 import { motion } from "framer";
 import { FaTimes } from "react-icons/fa";
+import { twMerge } from "tailwind-merge";
 
 type Props = {};
 
@@ -45,7 +46,12 @@ const Skills = (props: Props) => {
             .map((s, index) => (
               <p
                 key={index}
-                className="text-xs md:text-lg bg-gray-200/40 dark:bg-gray-600/40 backdrop-blur-lg text-center px-4 py-1 rounded-full dark:text-gray-100 border border-gray-300 dark:border-gray-600"
+                className={twMerge(
+                  "text-xs md:text-lg bg-gray-200/40 dark:bg-gray-600/40 backdrop-blur-lg text-center px-4 py-1 rounded-full dark:text-gray-100 border border-gray-300 dark:border-gray-600",
+                  ["Redux Toolkit", "React Native", "Framer Motion"].includes(
+                    s.skill
+                  ) && "col-span-2"
+                )}
               >
                 {s.skill}
               </p>

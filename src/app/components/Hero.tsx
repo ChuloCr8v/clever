@@ -145,7 +145,7 @@ const Hero = () => {
           prevTitle={"My Resume"}
           nextTitle={"About Me"}
           nextLink="/about"
-          prevLink="https://drive.google.com/file/d/1_GrUJZrN3gDWy4CyNfniFKPY1v5Z-WTh/view?usp=sharing"
+          prevLink="https://drive.google.com/file/d/1hVUCEoKE1CkH-AhqTIxJUV7-_4idTpTz/view?usp=sharing"
         />
         <Cv />
       </div>
