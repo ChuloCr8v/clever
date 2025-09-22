@@ -15,9 +15,9 @@ export const skills = [
   // ⚛️ Frameworks & Libraries
   { skill: "React.js", type: "framework", icon: "" },
   { skill: "Next.js", type: "framework", icon: "" },
-  { skill: "React Native", type: "framework", icon: "" },
   { skill: "Express.js", type: "framework", icon: "" },
   { skill: "NestJS", type: "framework", icon: "" },
+  { skill: "React Native", type: "framework", icon: "" },
 
   // 🗄️ Databases & ORMs
   { skill: "MongoDB", type: "database", icon: "" },
@@ -32,7 +32,7 @@ export const skills = [
   { skill: "Git/GitHub", type: "versionControl", icon: "" },
 
   // 🎬 Animation
-  // { skill: "Framer Motion", type: "others", icon: "" },
+  { skill: "Framer Motion", type: "others", icon: "" },
 
   // 🎨 Design
   { skill: "Figma", type: "design", icon: "" },

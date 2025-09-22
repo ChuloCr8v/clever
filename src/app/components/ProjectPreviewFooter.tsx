@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGlobe, FaGithub } from "react-icons/fa";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   data: {
@@ -29,7 +30,10 @@ const ProjectPreviewFooter = ({ data }: Props) => {
           href={x.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 py-4 last-of-type:border-l border-gray-300 dark:border-gray-600 hover:bg-gray-700 hover:text-white duration-200"
+          className={twMerge(
+            "flex items-center justify-center gap-2 text-sm py-4 last-of-type:border-l border-gray-300 text-primaryRed dark:border-gray-600 hover:bg-gray-700 hover:text-white duration-200",
+            i === 1 && "text-primaryBlue"
+          )}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

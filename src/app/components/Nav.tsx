@@ -11,17 +11,17 @@ import { usePathname } from "next/navigation";
 type Props = { isOpen: boolean };
 
 export const menu = [
-  { title: "Home", url: "/", icon: <FaHome className="text-[18px]" /> },
-  { title: "About", url: "/about", icon: <FaUser className="text-[16px]" /> },
+  { title: "Home", url: "/", icon: <FaHome className="text-[16px]" /> },
+  { title: "About", url: "/about", icon: <FaUser className="text-[14px]" /> },
   {
     title: "Projects",
     url: "/projects",
-    icon: <FaBriefcase className="text-[16px]" />,
+    icon: <FaBriefcase className="text-[14px]" />,
   },
   {
     title: "Contact",
     url: "/contact",
-    icon: <FaHeadphonesAlt className="text-[16px]" />,
+    icon: <FaHeadphonesAlt className="text-[14px]" />,
   },
 ];
 

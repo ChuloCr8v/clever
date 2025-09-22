@@ -8,7 +8,6 @@ import { closeMenu } from "../../../redux/menu";
 import { menu } from "./Nav";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 type Props = {
   nextExternal?: boolean;
@@ -48,23 +47,30 @@ const FooterButton = (props: Props) => {
     >
       <div
         className={twMerge(
-          "w-full flex items-center justify-between gap-3 relative group max-w-xl"
+          "w-full flex items-center justify-between gap-3 relative max-w-xl"
         )}
       >
-        {/* Prev Button */}
-        <Button
-          external={props.prevExternal}
-          title={""}
-          link={props.prevLink}
-          icon={props.icon}
-          prevBtn
-          onclick={() => dispatch(closeMenu())}
-          className={twMerge(
-            "relative group animate-pop opacity-0 flex justify-center items-center",
-            "h-10 w-10 rounded-full border border-gray-700 bg-gray-900/50 text-white shadow-md backdrop-blur-md",
-            "hover:bg-gradient-to-r hover:from-primaryBlue/70 hover:to-primaryRed/70 transition duration-500"
-          )}
-        />
+        {/* Prev Button with splinter wrapper */}
+        <div className="relative group animate-pop opacity-0 h-10 w-10">
+          {/* Splinter effect */}
+          <span className="absolute inset-0 overflow-hidden rounded-full">
+            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-primaryBlue dark:via-white/30 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] duration-700 transition-transform" />
+          </span>
+
+          {/* Button */}
+          <Button
+            external={props.prevExternal}
+            title={""}
+            link={props.prevLink}
+            icon={props.icon}
+            prevBtn
+            onclick={() => dispatch(closeMenu())}
+            className={twMerge(
+              "relative z-10 flex justify-center items-center",
+              "h-10 w-10 rounded-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900/50 dark:text-white dark:shadow-md backdrop-blur-md"
+            )}
+          />
+        </div>
 
         {/* Menu */}
         <div className="flex items-center justify-center gap-3">
@@ -72,9 +78,9 @@ const FooterButton = (props: Props) => {
             <Link href={m.url} key={m.title}>
               <div
                 className={twMerge(
-                  "relative group animate-pop opacity-0",
-                  "px-3 py-2 rounded-lg border border-gray-700 bg-gray-900/50 text-white shadow-md backdrop-blur-md",
-                  "hover:bg-gradient-to-r hover:from-primaryBlue/70 hover:to-primaryRed/70 transition duration-500",
+                  "relative group animate-pop opacity-0 duration-200",
+                  "px-3 py-2 rounded-lg border dark:border-gray-700 dark:bg-gray-900/50 dark:text-white text-gray-600 border-gray-300 dark:shadow-md backdrop-blur-md",
+                  "hover:!scale-105",
                   pathname === m.url &&
                     "ring-2 ring-primaryBlue bg-gradient-to-r from-primaryBlue/70 to-primaryRed/70 "
                 )}
@@ -85,7 +91,7 @@ const FooterButton = (props: Props) => {
               >
                 {/* Shiny splinter */}
                 <span className="absolute inset-0 overflow-hidden rounded-lg">
-                  <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] duration-700 transition-transform" />
+                  <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-primaryBlue dark:via-white/30 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] duration-700 transition-transform" />
                 </span>
                 <span
                   className={twMerge(
@@ -94,7 +100,7 @@ const FooterButton = (props: Props) => {
                   )}
                 >
                   {m.icon}
-                  <span className="hidden sm:inline text-sm font-medium">
+                  <span className="hidden sm:inline text-xs font-medium">
                     {m.title}
                   </span>
                 </span>
@@ -103,19 +109,26 @@ const FooterButton = (props: Props) => {
           ))}
         </div>
 
-        {/* Next Button */}
-        <Button
-          external={props.nextExternal}
-          title={""}
-          link={props.nextLink}
-          icon={props.icon}
-          onclick={() => dispatch(closeMenu())}
-          className={twMerge(
-            "relative group animate-pop opacity-0 flex justify-center items-center",
-            "h-10 w-10 rounded-full border border-gray-700 bg-gray-900/50 text-white shadow-md backdrop-blur-md",
-            "hover:bg-gradient-to-r hover:from-primaryBlue/70 hover:to-primaryRed/70 transition duration-500"
-          )}
-        />
+        {/* Next Button with splinter wrapper */}
+        <div className="relative group animate-pop opacity-0 h-10 w-10">
+          {/* Splinter effect */}
+          <span className="absolute inset-0 overflow-hidden rounded-full">
+            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-primaryBlue dark:via-white/30 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] duration-700 transition-transform" />
+          </span>
+
+          {/* Button */}
+          <Button
+            external={props.nextExternal}
+            title={""}
+            link={props.nextLink}
+            icon={props.icon}
+            onclick={() => dispatch(closeMenu())}
+            className={twMerge(
+              "relative z-10 flex justify-center items-center",
+              "h-10 w-10 rounded-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900/50 dark:text-white dark:shadow-md backdrop-blur-md"
+            )}
+          />
+        </div>
       </div>
     </div>
   );

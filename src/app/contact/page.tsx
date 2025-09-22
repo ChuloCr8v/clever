@@ -152,14 +152,14 @@ const Contact = () => {
               </div>
             </div>
             <div className="form mt-24 xl:mt-0 pb-12">
-              <form className="flex flex-col items-start gap-4 md:gap-8 w-full">
-                <div className="text-center w-full py-12 border dark:border-gray-500 border-gray-400 rounded">
+              <form className="flex flex-col items-start gap-4 w-full">
+                <div className="text-center w-full py-12 border dark:border-gray-500 border-gray-400 rounded-2xl bg-gray-100/40 dark:bg-gray-900/40 backdrop-blur">
                   <p className="text-3xl md:text-4xl font-semibold">Mail Me</p>
                   <p className=" mt-1 md:text-xl text-gray-500 dark:text-gray-400">
                     Reach out to me via my inbox
                   </p>
                 </div>
-                <div className="w-full space-y-6 md:space-y-0 md:grid md:grid-cols-2 gap-4 md:gap-y-8 mt-4">
+                <div className="w-full space-y-6 md:space-y-0 md:grid md:grid-cols-2 gap-4 mt-4">
                   {" "}
                   <FormGroup
                     label={"name"}
@@ -214,14 +214,17 @@ const Contact = () => {
                   </label>
                   <textarea
                     name={"mail"}
-                    className={inputClassName}
+                    className={twMerge(
+                      inputClassName,
+                      " bg-gray-100/40 dark:bg-gray-900/40 backdrop-blur-lg rounded-lg text-sm"
+                    )}
                     placeholder="Write me a mail"
-                    rows={6}
+                    rows={4}
                     onChange={handleInputChange}
                     value={formData.mail}
                   />
                 </div>
-                <p className="md:-mt-5 text-sm place-self-end dark:text-yellow-600 text-red-600">
+                <p className=" text-sm place-self-end dark:text-yellow-600 text-red-600">
                   <span className="font-bold">Note:</span> (
                   <span className="font-bold text-xl leading-none">*</span>)
                   indicates required information.
@@ -285,7 +288,10 @@ const FormGroup = (props: {
         value={props.value}
         type={props.type}
         placeholder={props.placeholder}
-        className={inputClassName}
+        className={twMerge(
+          inputClassName,
+          " bg-gray-100/40 dark:bg-gray-900/40 backdrop-blur-lg rounded-lg h-12 text-sm"
+        )}
         onChange={props.handleChange}
         name={props.name}
       />
