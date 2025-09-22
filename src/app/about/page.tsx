@@ -9,6 +9,7 @@ import FooterButton from "../components/FooterButton";
 import PageTitle from "../components/PageTitle";
 import ParticlesContainer from "../components/Particles";
 import { openSkills } from "../../../redux/skills";
+import { twMerge } from "tailwind-merge";
 
 type Props = {};
 
@@ -24,7 +25,9 @@ const Page = (props: Props) => {
     return (
       <div className={subtitleClassName}>
         <p className={subtitleTextClassName}>{props.subtitle}</p>
-        <p className={subtitleContentClassName}>{props.content}</p>
+        <p className={twMerge(subtitleContentClassName, "text-sm")}>
+          {props.content}
+        </p>
       </div>
     );
   };
@@ -60,7 +63,7 @@ const Page = (props: Props) => {
                   }
                 />
 
-                <div className={subtitleClassName}>
+                <div className={twMerge(subtitleClassName, "text-sm")}>
                   <p className={subtitleTextClassName}>Technical Expertise</p>
                   <p className={subtitleContentClassName}>
                     My skillset bridges frontend, backend, and cloud tools,

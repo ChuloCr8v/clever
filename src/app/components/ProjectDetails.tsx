@@ -186,7 +186,7 @@ const ProjectDetails = () => {
       width={800}
       closeIcon={null}
       title={
-        <div className="relative p-3 lg:p-6 border-b bg-gray-900 border-gray-300 dark:border-gray-600 flex items-center justify-between">
+        <div className="relative p-3 lg:p-6 border-b bg-gray-100/40 dark:bg-gray-900/40 backdrop-blur-lg border-gray-300 dark:border-gray-600 flex items-center justify-between">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
             <h2 className="font-bold text-2xl dark:text-primaryRed text-primaryBlue">
               {projectDetails.title}
@@ -199,9 +199,8 @@ const ProjectDetails = () => {
 
           <BiX
             size={28}
-            color="white"
             onClick={() => dispatch(closeProjectDetails())}
-            className="cursor-point"
+            className="cursor-point text-primaryBlue dark:text-primaryRed"
           />
         </div>
       }

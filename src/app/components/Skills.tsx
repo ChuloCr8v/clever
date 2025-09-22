@@ -21,7 +21,7 @@ const Skills = (props: Props) => {
         <p className="leading-none text-primaryBlue dark:text-primaryRed font-semibold md:text-xl">
           {props.title}
         </p>
-        <div className="border-b border-gray-600 basis-full "></div>{" "}
+        <div className="border-b dark:border-gray-600 border-gray-300 basis-full "></div>{" "}
       </div>
     );
   };
@@ -35,7 +35,7 @@ const Skills = (props: Props) => {
           duration: 0.3,
           delay: 0.5,
         }}
-        className="language bg-gray-50 dark:bg-gray-900/30 backdrop-blur-sm 100 p-4 border-1 shadow rounded-xl border border-gray-600"
+        className="language bg-gray-50 dark:bg-gray-900/30 backdrop-blur-sm 100 p-4 border-1 dark:shadow rounded-xl border border-gray-300 dark:border-gray-600"
       >
         <SkillSectionTitle title={props.title} />
 
@@ -45,7 +45,7 @@ const Skills = (props: Props) => {
             .map((s, index) => (
               <p
                 key={index}
-                className="text-xs md:text-lg bg-gray-200 dark:bg-gray-600 text-center px-4 py-1 rounded-full dark:text-gray-100"
+                className="text-xs md:text-lg bg-gray-200/40 dark:bg-gray-600/40 backdrop-blur-lg text-center px-4 py-1 rounded-full dark:text-gray-100 border border-gray-300 dark:border-gray-600"
               >
                 {s.skill}
               </p>
@@ -79,7 +79,7 @@ const Skills = (props: Props) => {
             </div>
           </motion.div>
 
-          <div className="container space-y-6 overflow-y-scroll h-full pb-28">
+          <div className="container space-y-4 overflow-y-scroll h-full pb-28">
             {[
               { title: "Languages", type: "language" },
               { title: "Styling", type: "style" },
